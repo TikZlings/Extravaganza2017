@@ -1,0 +1,33 @@
+% !Mode:: "TeX:DE:UTF-8:Main"
+\documentclass{article}
+\usepackage{geometry}
+\geometry{papersize={16cm,10cm},margin=1cm}
+\usepackage{tikzducks,animate}
+\newcommand{\frenchduck}{\duck[body=yellow!60!red!30!white,tshirt=white!90!
+	yellow,stripes={\stripes[color=blue!70!black,rotate
+		=-87,width=0.07,distance=0.12]},beret=blue!30!black
+	,baguette=brown]}
+\pagestyle{empty}
+\begin{document}
+\begin{animateinline}[loop,autoplay]{10}
+\multiframe{160}{dsposto=0pt+10pt}{%
+\parbox{\linewidth}{%
+\begin{tikzpicture}
+\frenchduck
+\begin{scope}[shift={(\dsposto, \dsposto)}]
+\frenchduck
+\end{scope}
+\begin{scope}[shift={(-\dsposto, \dsposto)}]
+\frenchduck
+\end{scope}
+\begin{scope}[shift={(-\dsposto, -\dsposto)}]
+\frenchduck
+\end{scope}
+\begin{scope}[shift={(\dsposto, -\dsposto)}]
+\frenchduck
+\end{scope}
+\end{tikzpicture}
+}}
+\end{animateinline}
+
+\end{document}
