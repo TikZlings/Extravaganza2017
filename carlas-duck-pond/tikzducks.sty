@@ -1,0 +1,985 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% The tikzducks package
+% A package to bring rubber ducks into tikz
+% Maintained by samcarter
+%
+% Project repository and bug tracker:
+% https://github.com/samcarter8/tikzducks
+%
+% Released under the LaTeX Project Public License v1.3c or later
+% See http://www.latex-project.org/lppl.txt
+%
+% Version 0.4
+% Sep 04, 2017 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{tikzducks}
+
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{patterns} % for the wizard hat
+\usetikzlibrary{calc} % for the sports jerseys
+
+%\pgfdeclarelayer{backgroundlayer} 
+%\pgfdeclarelayer{bodylayer}
+%\pgfdeclarelayer{clothinglayer}
+%\pgfdeclarelayer{hairlayer}
+%\pgfdeclarelayer{hatlayer}
+%
+%\pgfsetlayers{backgroundlayer,bodylayer,clothinglayer,hairlayer,hatlayer,main}
+
+\newcommand*{\duck}[1][]{\tikzset{%
+	/duck/.cd,#1}\duck@draw%
+}
+
+\newif\ifduck@name
+% Environment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@water
+% body parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@grumpy
+% hair styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@shorthair
+\newif\ifduck@longhair
+\newif\ifduck@crazyhair
+\newif\ifduck@recedinghair
+\newif\ifduck@eyebrow
+% clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@tshirt
+\newif\ifduck@jacket
+\newif\ifduck@tie
+\newif\ifduck@cape
+\newif\ifduck@stripes
+% Headgear %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@alien
+\newif\ifduck@hat
+\newif\ifduck@cap
+\newif\ifduck@santa
+\newif\ifduck@unicorn
+\newif\ifduck@magichat
+\newif\ifduck@chef
+\newif\ifduck@witch
+\newif\ifduck@graduate
+\newif\ifduck@beret
+\newif\ifduck@crown
+\newif\ifduck@peakedcap
+\newif\ifduck@bunny
+\newif\ifduck@tophat
+% Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@glasses
+\newif\ifduck@sunglasses
+\newif\ifduck@icecream
+\newif\ifduck@book
+\newif\ifduck@magicwand
+\newif\ifduck@cricket
+\newif\ifduck@rollingpin
+\newif\ifduck@signpost
+\newif\ifduck@lightsaber
+\newif\ifduck@cake
+\newif\ifduck@pizza
+\newif\ifduck@hockey
+\newif\ifduck@baguette
+\newif\ifduck@football
+\newif\ifduck@mask
+\newif\ifduck@necklace
+\newif\ifduck@milkshake
+\newif\ifduck@wine
+\newif\ifduck@prison
+\newif\ifduck@speech
+\newif\ifduck@think
+
+\tikzset{
+	/duck/.cd,
+	name/.code = \duck@nametrue \def\duck@name{#1},
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Environment
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	water/.code = \duck@watertrue \def\duck@water{#1},
+	% setting default
+	water/.default = blue,	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% body parts
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	body/.code		= \def\duck@body{#1},
+ 	head/.code		= \def\duck@head{#1},
+ 	eye/.code			= \def\duck@eye{#1},
+ 	pupil/.code		= \def\duck@pupil{#1},
+ 	bill/.code		= \def\duck@bill{#1},
+ 	grumpy/.code	= \duck@grumpytrue,
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	body	= yellow!70!brown,
+	eye		= white!85!yellow,
+	pupil	= black,
+	bill	= orange!50!brown, 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% clothing
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	tshirt/.code  = \duck@tshirttrue	\def\duck@tshirt{#1},
+	jacket/.code  = \duck@jackettrue	\def\duck@jacket{#1},
+	tie/.code 	  = \duck@tietrue			\def\duck@tie{#1},
+	cape/.code	  = \duck@capetrue		\def\duck@cape{#1},
+	stripes/.code = \duck@stripestrue	\def\duck@stripes{#1},
+	% setting default %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	tshirt/.default	 = white,
+	jacket/.default	 = blue,
+	tie/.default		 = blue,	
+	cape/.default		 = red,
+	stripes/.default = \stripes ,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% hair styles
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	shorthair/.code			= \duck@shorthairtrue			\def\duck@hair{#1},
+ 	longhair/.code			= \duck@longhairtrue			\def\duck@hair{#1},
+ 	crazyhair/.code			= \duck@crazyhairtrue			\def\duck@hair{#1},
+ 	recedinghair/.code	= \duck@recedinghairtrue	\def\duck@hair{#1},
+ 	eyebrow/.code				= \duck@eyebrowtrue			  \def\duck@eyebrow{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	shorthair/.default 		= brown,
+	longhair/.default			= brown,
+	crazyhair/.default		= brown,
+	recedinghair/.default	= brown,
+	eyebrow/.default			= brown,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Headgear
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	alien/.code				= \duck@alientrue 			\def\duck@alien{#1},
+ 	hat/.code					= \duck@hattrue 				\def\duck@hat{#1},
+ 	cap/.code					= \duck@captrue					\def\duck@cap{#1},
+ 	santa/.code				= \duck@santatrue				\def\duck@santa{#1},
+ 	chef/.code				= \duck@cheftrue				\def\duck@chef{#1},
+ 	graduate/.code		= \duck@graduatetrue		\def\duck@graduate{#1},
+ 	tassel/.code			=												\def\duck@tassel{#1},
+ 	beret/.code				= \duck@berettrue				\def\duck@beret{#1},
+ 	unicorn/.code			= \duck@unicorntrue 		\def\duck@unicorn{#1},
+	magichat/.code		= \duck@magichattrue		\def\duck@magichat{#1},
+	magicstars/.code	= 											\def\duck@magicstars{#1},
+	witch/.code				=	\duck@witchtrue				\def\duck@witch{#1},
+	crown/.code				= \duck@crowntrue				\def\duck@crown{#1},
+	bunny/.code				= \duck@bunnytrue				\def\duck@bunny{#1},
+	inear/.code				=												\def\duck@inear{#1},
+	peakedcap/.code		= \duck@peakedcaptrue		\def\duck@peakedcap{#1},
+	tophat/.code			= \duck@tophattrue			\def\duck@tophat{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	alien/.default		= green,		
+	hat/.default			= brown,
+	cap/.default			= blue,
+	santa/.default		= red!80!black,
+	chef/.default			= gray!20!white,
+	graduate/.default	= black,
+	tassel						= red,
+	beret/.default		= black,			
+	unicorn/.default	= pink,
+	magichat/.default	= violet,
+	magicstars        = yellow!80!brown,
+	witch/.default		= black,		
+	crown/.default		= yellow,
+	bunny/.default		= \duck@body,
+	inear							= \duck@bunny!50!white,
+	peakedcap/.default= blue,
+	tophat/.default		= black,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	%
+ 	% Accessories
+ 	%
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	glasses/.code			= \duck@glassestrue			\def\duck@glasses{#1},
+ 	sunglasses/.code	= \duck@sunglassestrue	\def\duck@sunglasses{#1},
+	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
+	flavoura/.code 		= 											\def\duck@flavoura{#1},
+	flavourb/.code 		= 											\def\duck@flavourb{#1},
+	flavourc/.code 		= 											\def\duck@flavourc{#1},
+	book/.code 				= \duck@booktrue 				\def\duck@book{#1},
+	bookcolour/.code 	= 											\def\duck@bookcolour{#1},
+	signpost/.code		= \duck@signposttrue		\def\duck@signpost{#1},
+	signcolour/.code  = 											\def\duck@signcolour{#1},
+	signback/.code		= 											\def\duck@signback{#1},
+	magicwand/.code		= \duck@magicwandtrue,
+	cricket/.code			= \duck@crickettrue			\def\duck@cricket{#1},
+	rollingpin/.code	= \duck@rollingpintrue	\def\duck@rollingpin{#1},
+	lightsaber/.code 	= \duck@lightsabertrue	\def\duck@lightsaber{#1},
+	cake/.code				= \duck@caketrue				\def\duck@cake{#1},
+	pizza/.code				= \duck@pizzatrue,
+	hockey/.code			= \duck@hockeytrue			\def\duck@hockey{#1},
+	baguette/.code		= \duck@baguettetrue		\def\duck@baguette{#1},
+	football/.code		= \duck@footballtrue		\def\duck@football{#1},
+	mask/.code				= \duck@masktrue				\def\duck@mask{#1},
+	necklace/.code		= \duck@necklacetrue		\def\duck@necklace{#1},
+	milkshake/.code		= \duck@milkshaketrue		\def\duck@milkshake{#1},
+	wine/.code				= \duck@winetrue				\def\duck@wine{#1},	
+	prison/.code			= \duck@prisontrue			\def\duck@prison{#1},
+	speech/.code 			= \duck@speechtrue 			\def\duck@speech{#1},
+	think/.code 			= \duck@thinktrue 			\def\duck@think{#1},
+	bubblecolour/.code = 										\def\duck@bubblecolour{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	glasses/.default		= black,	
+	sunglasses/.default	= black,	
+	icecream/.default 	= brown!60!gray,
+	flavoura 						= brown!50!black,
+	flavourb 						= white!70!brown,
+	flavourc 						= red!50!white,
+	bookcolour					= brown,
+	signcolour					= brown!50!black,
+	signback						= green!40!black,	
+	cricket/.default		= brown,
+	rollingpin/.default	= brown,
+	lightsaber/.default = green,
+	cake/.default				= violet,
+	hockey/.default			=	brown,
+	baguette/.default		= brown,
+	football/.default		= white,
+	mask/.default				= black,
+	necklace/.default		= white!80!gray,
+	milkshake/.default 	= red!20!white,
+	wine/.default				= red!70!black,
+	prison/.default			= gray,
+	bubblecolour				= gray!30!white,
+}
+
+\def\duck@draw{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% minimal bounding box size
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\path (0.1,0.1) rectangle (2.1,2.12);
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% defining some coordinates
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@name
+	\coordinate (\duck@name-wing) at (0.8,0.7);
+	\coordinate (\duck@name-head) at (0.9,2);
+	\coordinate (\duck@name-bill) at (0.5,1.3);
+\fi
+\coordinate (wing) at (0.8,0.7);
+\coordinate (head) at (0.9,2);
+\coordinate (bill) at (0.5,1.3);
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Environment
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{backgroundlayer}
+%
+% water %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@water
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (0.88 and 0.35) (1.00,0.40) ellipse (0.75 and 0.25);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.05 and 0.50) (1.00,0.40) ellipse (0.95 and 0.42);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.23 and 0.63) (1.00,0.40) ellipse (1.17 and 0.57);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.42 and 0.77) (1.00,0.40) ellipse (1.38 and 0.73);		
+\fi
+%
+%\end{pgfonlayer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% body parts
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{bodylayer}
+%
+% body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{pgfinterruptboundingbox}
+	\fill[\duck@body] \duckpathbody;
+\end{pgfinterruptboundingbox}
+%
+% head %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\duck@head\else\let\duck@head=\duck@body\fi
+\fill[\duck@head] 
+	(0.90,1.50) ellipse (0.50 and 0.625);
+%
+% bill %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@grumpy
+ 	\fill[\duck@bill] \duckpathgrumpybill;
+\else
+	\fill[\duck@bill] \duckpathbill;
+\fi
+%
+% Superhero mask %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% has to be behind the eyes
+\ifduck@mask
+	\begin{scope}
+		\clip (0.90,1.50) ellipse (0.50 and 0.625);
+		\fill[\duck@mask,rotate=-15] (-0.1,1.59) rectangle (1.3,1.88);
+	\end{scope}
+\fi%
+%
+% right eye %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fill[\duck@eye, rotate=-20] 
+	(0.23,1.7675) ellipse (0.0893 and 0.125);
+\fill[\duck@pupil, rotate=-20] 
+	(0.26,1.7575) ellipse (0.0357 and 0.0714);
+%
+% left eye %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fill[\duck@eye, rotate=-20] 
+	(-0.06,1.74) ellipse (0.0786 and 0.1143);
+\fill[\duck@pupil, rotate=-20] 
+	(-0.03,1.73) ellipse (0.0286 and 0.0643);
+%
+%\end{pgfonlayer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% clothing
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{clothinglayer}
+%
+% tshirt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@tshirt
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@tshirt] \duckpathtshirt;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% tie %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@tie
+	\fill[\duck@tie,rotate=-12] (0.32,0.7) rectangle (0.43,1.15);
+\fi
+%
+% jacket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@jacket
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@jacket] \duckpathjacket;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% stripes for football jersey %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@stripes
+	\duck@stripes
+\fi
+%
+% superhero cape %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cape
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@cape] \duckpathcape;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% necklace (not really clothing, but needs to be below the hair) %%%%%
+\ifduck@necklace
+	\fill[\duck@necklace] (0.5000,1.112) circle (0.032) (0.5100,1.050) circle (0.032) (0.5200,0.990) circle (0.032) (0.5400,0.931) circle (0.032) (0.5825,0.885) circle (0.032) (0.6450,0.885) circle (0.032) (0.7000,0.910) circle (0.032) (0.7500,0.945) circle (0.032) (0.8000,0.980) circle (0.032) (0.8500,1.020) circle (0.032) (0.9000,1.050) circle (0.032) (0.9500,1.080) circle (0.032) (1.0000,1.110) circle (0.032) (1.0550,1.130) circle (0.032) (1.1100,1.150) circle (0.032) (1.1650,1.165) circle (0.032) (1.2200,1.180) circle (0.032) (1.2750,1.195) circle (0.032) (1.3300,1.210) circle (0.032);
+\fi
+%
+%\end{pgfonlayer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% hair styles
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{hairlayer}
+%
+% short hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@shorthair
+	\path (0.1,0.1) rectangle (2.1,2.25);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathshorthair;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% long hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@longhair
+	\path (0.1,0.1) rectangle (2.1,2.25);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathlonghair;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% crazy hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@crazyhair
+	\path (0.1,0.1) rectangle (2.1,2.4);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathcrazyhair;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% receding hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@recedinghair
+	\path (0.1,0.1) rectangle (2.1,2.18);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathrecedinghair;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfkeys{/duck/eyebrow/.@def/.get=\duck@test}
+\ifx\duck@eyebrow\duck@test
+    \ifdefined\duck@hair\let\duck@eyebrow=\duck@hair\fi
+\fi%
+\ifduck@eyebrow
+	\fill[\duck@eyebrow, rounded corners=1, rotate=60] (1.92,0.21) rectangle (1.98,-0.01);
+	\fill[\duck@eyebrow, rounded corners=1, rotate=100] (1.67,-0.77) rectangle (1.73,-0.95);
+\fi	
+%
+%\end{pgfonlayer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Headgear
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{hatlayer}
+% 
+% alien %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@alien
+	\fill[\duck@alien,rotate=-25] (0.09,2.1) rectangle (0.16,2.6);
+	\fill[\duck@alien,rotate=5] (0.79,1.86) rectangle (0.86,2.25);
+	\fill[\duck@alien] (1.20,2.30) circle (0.07);
+	\fill[\duck@alien] (0.62,2.35) circle (0.07);
+\fi
+%
+% hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@hat
+	\fill[\duck@hat,rotate=-15] (0.44,2.1) ellipse (0.6 and 0.1);	
+	\fill[\duck@hat,rotate=-15] (0.07,2.1) rectangle (0.81,2.4);
+	\fill[\duck@hat,rotate=-15] (0.44,2.4) ellipse (0.37 and 0.08);	
+\fi
+%
+% cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cap
+	\fill[\duck@cap, start angle=0, end angle=150, radius=0.5] (1.4,1.75) arc;
+	\fill[\duck@cap,rotate=-15] (0.3,2.05) ellipse (0.6 and 0.15);
+\fi	
+%
+% Santa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@santa
+	\fill[\duck@santa] 
+		(0.430,1.803) .. controls (0.590,2.174) and (0.837,2.065) ..
+		(1.118,1.954) .. controls (1.679,1.731) and (1.328,1.193) .. 
+		(1.647,1.057) .. controls (1.638,1.255) and (1.745,2.104) .. 
+		(1.168,2.270) .. controls (0.867,2.356) and (0.536,2.280) .. 
+		(0.430,1.803) -- cycle;
+	\fill[white!80!brown] 
+		(0.44,1.733) .. controls (0.211,2.299) and (1.082,2.188) .. 
+		(1.456,1.759) .. controls (1.534,1.637) and (1.480,1.545) .. 
+		(1.400,1.566) .. controls (1.265,1.714) and (0.577,2.267) .. 
+		(0.44,1.733) -- cycle;
+	\fill[white!80!brown] (1.6,1.0) circle (0.17);
+\fi
+%
+% Chef hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@chef
+	\fill[\duck@chef,rotate=-15] (0.44,2.1) ellipse (0.37 and 0.08);	
+	\fill[\duck@chef,rotate=-15] (0.07,2.1) rectangle (0.81,2.55);
+	\fill[\duck@chef] (1.01,2.47) circle (0.17);
+	\fill[\duck@chef] (1.24,2.35) circle (0.15);
+	\fill[\duck@chef] (0.77,2.40) circle (0.12);
+	\fill[\duck@chef] (1.39,2.20) circle (0.12);
+\fi
+%
+% graduate hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@graduate
+	\fill[\duck@graduate,rotate=-15] (0.44,2.1) ellipse (0.37 and 0.1);	
+	\fill[\duck@graduate,rotate=-15] (0.07,2.1) rectangle (0.81,2.3);
+	\fill[\duck@graduate] (0.3,2.25) -- (1.05,2.35) -- (1.7,1.95) -- (0.92,1.85) -- cycle;
+	\fill[\duck@tassel,rounded corners=1] (1.12,1.89) -- (1.01,2.1) -- (1.09,2.11) -- (1.2,1.9) -- (1.2,1.3) -- (1.12,1.3) -- cycle;
+	\fill[\duck@tassel] (1.16,1.3) ellipse (0.06 and 0.12);
+\fi
+%
+% beret %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@beret
+	\fill[\duck@beret,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17);
+	\fill[\duck@beret,rotate=-25] (0.13,2.25) ellipse (0.55 and 0.17);
+	\fill[\duck@beret,rotate=-25] (0.13,2.4) circle (0.08);
+\fi
+%
+% unicorn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@unicorn
+	\fill[\duck@unicorn,rotate=25] (1.48,1.4375)--(1.60,1.9)--(1.72,1.4375);
+	\fill[\duck@body!100,rotate=25] (1.50,1.43)--(1.60,1.8375)--(1.70,1.43);	
+\fi
+%
+% magic hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@magichat
+	\path[preaction={fill, \duck@magichat!100},rotate=-5,
+				pattern=fivepointed stars, pattern color=\duck@magicstars!100] 
+		(0.36,1.95)--(0.86,2.95)--(1.20,1.85);
+\fi
+%
+% witch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@witch
+	\fill[\duck@witch,rotate=-15] (0.44,2.13) ellipse (0.75 and 0.17);	
+	\fill[\duck@witch,rotate=-15] (0.05,2.2)--(0.45,3.2)--(0.82,2.2);
+\fi
+%
+% crown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@crown
+	\path (0.7,1.95) rectangle (1.4,2.45);
+	\begin{pgfinterruptboundingbox}	
+		\fill[\duck@crown,rotate=-10,xshift=-10,yshift=3] \duckpathcrown;
+	\end{pgfinterruptboundingbox}	
+\fi
+%
+% Bunny ears %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@bunny
+	\path (0.55,1.9) rectangle (1.2,2.55);
+	\begin{pgfinterruptboundingbox}
+	\begin{scope}
+	  \clip[rotate=-5] (0.68,2.38) ellipse (0.3 and 0.4);
+		\fill[\duck@bunny,rotate=-5] (1.06,2.2) ellipse (0.3 and 0.4) (0.28,2.26) ellipse (0.3 and 0.4);
+	\end{scope}
+	
+	\begin{scope}
+	  \clip[rotate=-5] (0.68,2.38) ellipse (0.25 and 0.35);
+		\fill[\duck@inear,rotate=-5] (1.06,2.2) ellipse (0.25 and 0.35) (0.28,2.26) ellipse (0.25 and 0.35);
+	\end{scope}
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% peaked cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@peakedcap
+	\fill[\duck@peakedcap,rotate=-15] (0.35,2.05) ellipse (0.5 and 0.15);
+	\fill[\duck@peakedcap,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17);
+	\fill[\duck@peakedcap,rotate=-35] (-0.25,2.2) ellipse (0.55 and 0.17);
+\fi
+%
+% tophat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@tophat
+	\fill[\duck@tophat,rotate=-15] (0.44,2.1) ellipse (0.48 and 0.1);
+	\fill[\duck@tophat,rotate=-15]  (0.12,2.1) -- (0.75,2.1) -- (0.81,2.55) -- (0.07,2.55) -- cycle;
+	\fill[\duck@tophat,rotate=-15] (0.44,2.55) ellipse (0.37 and 0.08);	
+\fi
+%
+%\end{pgfonlayer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Accessories
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% sunglasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@sunglasses
+  \fill[\duck@sunglasses,rotate=-17] (0.42,1.8) rectangle (0.8,1.84);
+	\fill[\duck@sunglasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
+	\fill[\duck@sunglasses,rotate=-20] (0.23,1.7675) circle (0.14);
+	\fill[\duck@sunglasses,rotate=-20] (-0.06,1.74) circle (0.13);				
+\fi
+%
+% glasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@glasses
+  \fill[\duck@glasses,rotate=-17] (0.42,1.8) rectangle (0.8,1.84);
+	\fill[\duck@glasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
+	\fill[\duck@glasses,rotate=-20,even odd rule] (0.23,1.7675) circle (0.14) (0.23,1.7675) circle (0.11);
+	\fill[\duck@glasses,rotate=-20,even odd rule] (-0.06,1.74) circle (0.13) (-0.06,1.74) circle (0.095);		
+\fi
+%
+% icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@icecream
+	\fill[\duck@cone,rotate=-20] (0.35,1.20)--(0.50,0.60)--(0.75,1.20);
+	\fill[\duck@flavoura] (0.85,1.03) circle (0.12);
+	\fill[\duck@flavourb] (1.05,0.95) circle (0.12);
+	\fill[\duck@flavourc] (0.95,1.1) circle (0.12);		
+\fi
+%
+% book %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@book
+	\fill[\duck@bookcolour,rotate=-20] 
+		(0.40,1.20) rectangle (0.80,0.60);
+	\node[rotate=-20, color=white] at (0.88,0.70) {\duck@book};%
+\fi
+%
+% signpost %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@signpost
+	\fill[\duck@signcolour, rounded corners=1, rotate=-20] (0.8,0.75) rectangle (0.9,1.75);
+  \fill[\duck@signcolour, rounded corners=1, rotate=-20] (0.4,1.7) rectangle (1.3,2.4);
+  \fill[\duck@signback, rounded corners=1, rotate=-20] (0.45,1.75) rectangle (1.25,2.35);
+ 	\node[rotate=-20, color=white] at (1.5,1.65) {\duck@signpost};
+\fi
+%
+% speech bubble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@speech
+	\fill[\duck@bubblecolour] (-0.5,1.8) ellipse (0.7 and 0.3);
+	\fill[\duck@bubblecolour] (-0.2,1.54) -- (0.2,1.35) -- (0.0,1.6) -- cycle;
+	\node at (-0.5,1.8) {\duck@speech};
+\fi
+%
+% think bubble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@think
+	\fill[\duck@bubblecolour] (2,2.4) ellipse (0.7 and 0.35); 
+	\fill[\duck@bubblecolour] (1.55,2.35) circle (0.25) (2.0,2.15) circle (0.25) (2.4,2.25) circle (0.25) (1.6,2.55) circle (0.25) (2.0,2.6) circle (0.25) (2.35,2.5) circle (0.25) (1.65,1.95) circle (0.1) (1.55,1.80) circle (0.06) (1.47,1.70) circle (0.03);
+	\node at (2,2.4) {\duck@think};
+\fi
+%
+% magic wand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@magicwand
+	\fill[black,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
+	\fill[white,rotate=-30] (0.27,1.13) rectangle (0.37,1.03);
+\fi
+%
+% cricket bat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cricket
+	\fill[\duck@cricket, rounded corners=2, rotate=-30] (0.4,1.2) rectangle (0.7,2.2);
+	\fill[\duck@cricket, rounded corners=1, rotate=-30] (0.5,0.8) rectangle (0.6,1.3);
+\fi
+%
+% rollingpin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@rollingpin
+	\fill[\duck@rollingpin, rounded corners=2, rotate=-60] (-0.18,0.85) rectangle (0.08,1.75);
+	\fill[\duck@rollingpin, rounded corners=1, rotate=-60] (-0.1,0.65) rectangle (0.0,1.95);
+\fi
+%
+% lightsaber %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@lightsaber
+	\fill[\duck@lightsaber, rounded corners=1, rotate=-30] (0.5,0.9) rectangle (0.6,2.5);
+	\fill[gray!80!black, rounded corners=1, rotate=-30] (0.47,0.7) rectangle (0.63,1.2);
+\fi
+%
+% cake %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cake
+	\fill[\duck@cake] (1.00,0.50) ellipse (0.4 and 0.2);
+	\fill[\duck@cake] (0.6,0.5) rectangle (1.4,0.7);
+	\fill[\duck@cake] (1.00,0.70) ellipse (0.4 and 0.2);
+	\fill[\duck@cake!50!white] (0.75,0.75) rectangle (0.8,0.95);
+	\fill[\duck@cake!50!white] (1.2,0.75) rectangle (1.25,0.95);
+	\fill[\duck@cake!50!white] (0.975,0.65) rectangle (1.025,0.85);
+	\fill[white!85!yellow] (1.0,0.93) ellipse (0.03 and 0.06);
+	\fill[white!85!yellow] (1.225,1.03) ellipse (0.03 and 0.06);
+	\fill[white!85!yellow] (0.775,1.03) ellipse (0.03 and 0.06);
+\fi
+%
+% pizza %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@pizza
+ 	\fill[brown] (1.00,0.60) ellipse (0.4 and 0.2);
+ 	\fill[red!70!black] (1.00,0.60) ellipse (0.34 and 0.16);
+ 	\fill[white!85!yellow] (1.15,0.65) ellipse (0.065 and 0.04);	
+ 	\fill[white!85!yellow] (0.81,0.57) ellipse (0.065 and 0.04);	
+ 	\fill[white!85!yellow] (0.95,0.68) ellipse (0.065 and 0.04);	
+ 	\fill[white!85!yellow] (1.02,0.54) ellipse (0.065 and 0.04);
+ 	\fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
+ 	\fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
+ 	\fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
+ 	\fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);
+\fi
+%
+% Hockey stick %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@hockey
+	\fill[\duck@hockey, rounded corners=1, rotate=-30] (0.5,0.6) rectangle (0.6,2.1);
+	\fill[\duck@hockey, rounded corners=3] (0.2,0.2) rectangle (0.85,0.4);
+\fi
+%
+% baguette %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@baguette
+	\fill[\duck@baguette!70!white, rounded corners=4, rotate=-30] (0.4,0.72) rectangle (0.7,2.0);
+	\fill[\duck@baguette!80!black, rotate=5] (1.44,1.1) ellipse (0.1 and 0.03) (1.30,0.9) ellipse (0.1 and 0.03) (1.16,0.7) ellipse (0.1 and 0.03) (1.02,0.5) ellipse (0.1 and 0.03);
+\fi
+%
+% football %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@football
+	\fill[\duck@football] (1.2,0.33) circle (0.32);
+	\begin{scope}
+		\clip (1.2,0.33) circle (0.32);
+		\fill[black] (1.06,0.30) -- (1.01,0.17) -- (1.14,0.08) -- (1.26,0.14) -- (1.20,0.28) -- cycle (1.37,0.14) -- (1.46,0.27) -- (1.59,0.27) -- (1.41,0.04) -- cycle (1.28,0.38) -- (1.22,0.52) -- (1.33,0.61) -- (1.45,0.51) -- (1.43,0.37) -- cycle (0.87,0.44) -- (1.02,0.40) -- (1.10,0.53) -- (1.07,0.62) -- (0.94,0.57) -- cycle;
+	\end{scope}
+\fi
+%
+% milkshake %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@milkshake
+	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.55) ellipse (0.12 and 0.03);
+	\begin{scope}
+		\clip[rotate=-10] (0.58,0.5) rectangle (1.02,1.03); 
+		\fill[cyan!10!white, rotate=-10] (0.8,0.94) ellipse (0.18 and 0.4);
+		\fill[\duck@milkshake, rotate=-10] (0.8,0.94) ellipse (0.15 and 0.36);
+	\end{scope}
+	\fill[white!85!yellow] (0.83,0.92) circle (0.05) (0.88,0.9) circle (0.05) (0.93,0.92) circle (0.05) (0.99,0.91) circle (0.05) (1.06,0.86) circle (0.05) (1.13,0.87) circle (0.05) (0.85,0.99) circle (0.05) (0.9,0.98) circle (0.07) (1.0,0.98) circle (0.07) (1.1,0.95) circle (0.07);
+	\fill[red!90!black] (1.0,1.1) circle (0.05);
+	\fill[white!85!yellow] (0.94,1.05) circle (0.05) (1.03,1.03) circle (0.05);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+	\fill[red!90!black,rotate=20] (1.2,0.58) rectangle (1.22,0.85); 
+\fi
+% 
+% wine %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@wine
+	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.55) ellipse (0.12 and 0.03);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.7) ellipse (0.03 and 0.2);
+	\begin{scope}
+		\clip[rotate=-10] (0.58,0.5) rectangle (1.02,1.03); 
+		\fill[cyan!10!white, rotate=-10] (0.8,1.1) ellipse (0.18 and 0.4);
+	\end{scope}
+	\begin{scope}
+		\clip[rotate=-10] (0.58,0.5) rectangle (1.02,0.87); 
+		\fill[\duck@wine, rotate=-10] (0.8,1.1) ellipse (0.15 and 0.36);
+	\end{scope}
+\fi
+%
+% prison duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@prison
+	\fill[\duck@prison] (1.5,0.25) circle (0.3);
+	\fill[\duck@prison, even odd rule] (1.2,0.1) ellipse (0.10 and 0.07) (1.2,0.1) ellipse (0.06 and 0.04) (1.05,-0.05) ellipse (0.10 and 0.07) (1.05,-0.05) ellipse (0.06 and 0.04) (0.87,-0.2) ellipse (0.10 and 0.07) (0.87,-0.2) ellipse (0.06 and 0.04);
+	\fill[\duck@prison, even odd rule] (0.72,-0.2) ellipse (0.10 and 0.07) (0.72,-0.2) ellipse (0.06 and 0.04);	
+	\fill[\duck@prison,even odd rule,rotate=70](0.4,-1.05) ellipse (0.1 and 0.07) (0.4,-1.05) ellipse (0.06 and 0.04) (0.2,-0.95) ellipse (0.1 and 0.07) (0.2,-0.95) ellipse (0.06 and 0.04) (0.22,-0.58) ellipse (0.1 and 0.07) (0.22,-0.58) ellipse (0.06 and 0.04);
+	\fill[\duck@prison,even odd rule,rotate=110](-0.33,-0.55) ellipse (0.1 and 0.07) (-0.33,-0.55) ellipse (0.06 and 0.04);	
+	\begin{scope}
+		\clip[rotate=-12] (0.45,0.15) rectangle (0.63,0.25);	
+		\fill[\duck@prison,even odd rule,rotate=110](-0.07,-0.6) ellipse (0.1 and 0.07) (-0.07,-0.6) ellipse (0.06 and 0.04);	
+	\end{scope}
+\fi
+%
+%\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
+%
+}% from `\def\duck@draw{` at the very beginning 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Random ducks
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfmathsetseed{\number\pdfrandomseed}
+
+\pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}}
+\pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}}
+
+\newcommand{\shuffleducks}{%
+ \pgfmathrandomitem{\head}{head}%
+ \edef\randomhead{\head}%
+ \pgfmathrandomitem{\accessories}{accessories}%
+ \edef\randomaccessories{\accessories}%
+}
+
+\newcommand{\randuck}{%
+	\shuffleducks%
+	\duck[\randomhead, \randomaccessories]%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Defining some of the more complicate paths for easy reuse
+%
+% naming scheme is \duckpath<name>
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% body parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\duckpathbody}{%
+	(0.513,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+  (0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) ..
+  (1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.379) ..
+  (0.513,1.145) -- cycle
+}
+
+\newcommand{\duckpathgrumpybill}{%
+	(0.406,1.472) .. controls (0.643,1.530) and (0.643,1.530) ..
+ 	(0.800,1.300) .. controls (0.083,0.850) and (0.269,1.369) .. 
+ 	(0.406,1.472) -- cycle
+}
+
+\newcommand{\duckpathbill}{%
+	(0.406,1.472) .. controls (0.643,1.530) and (0.541,1.303) ..
+	(0.910,1.370) .. controls (0.083,0.850) and (0.269,1.369) ..
+	(0.406,1.472) -- cycle
+}
+
+% clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\duckpathtshirt}{%
+	(0.490,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+	(0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. 
+	(1.818,1.419) .. controls (0.938, 0.976) and ( 1.240,1.279) ..
+	(0.590,1.000) -- cycle
+}
+
+\newcommand{\duckpathjacket}{%
+	(0.500,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+	(0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. 
+	(1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.378) .. 
+	(0.513,0.700) -- cycle
+}
+
+% hair styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\duckpathshorthair}{%
+	(1.3947,1.4175) .. controls (1.4546,1.4518) and (1.4699,1.6566) .. 
+	(1.4343,1.7992) .. controls (1.2528,2.5033) and (0.2339,2.2710) .. 
+	(0.4151,1.5907) .. controls (0.4345,1.8709) and (0.7421,2.0999) .. 
+	(0.9494,1.9054) .. controls (1.2241,1.6476) and (1.3316,1.3814) .. 
+	(1.3947,1.4175) -- cycle
+}
+
+\newcommand{\duckpathlonghair}{%
+	(1.4508,0.7565) .. controls (1.5146,0.7888) and (1.5854,0.8216) .. 
+	(1.6247,0.8831) .. controls (1.5859,0.8847) and (1.4726,0.9457) .. 
+	(1.5587,0.9706) .. controls (1.6317,0.9685) and (1.7016,1.0046) .. 
+	(1.7314,1.0734) .. controls (1.7931,1.1660) and (1.6616,1.1176) .. 
+	(1.6277,1.1566) .. controls (1.6853,1.1741) and (1.7840,1.1829) .. 
+	(1.8123,1.2244) .. controls (1.7022,1.2488) and (1.5688,1.2663) .. 
+	(1.5063,1.3739) .. controls (1.4619,1.5143) and (1.4696,1.6649) .. 
+	(1.4340,1.8076) .. controls (1.2524,2.5117) and (0.2335,2.2794) .. 
+	(0.4060,1.5991) .. controls (0.4341,1.8793) and (0.6629,2.1130) .. 
+	(0.9011,1.9578) .. controls (1.2427,1.7382) and (1.3350,1.4214) .. 
+	(1.0905,1.0610) .. controls (1.0597,1.0109) and (1.1103,0.9166) .. 
+	(1.1805,0.8670) .. controls (1.2507,0.8174) and (1.3503,0.7853) .. 
+	(1.4508,0.7565) -- cycle;
+}
+
+\newcommand{\duckpathcrazyhair}{%
+	(0.1977,1.9023) .. controls (0.2633,2.0599) and (0.4819,2.0547) ..
+	(0.4713,2.0879) .. controls (0.4647,2.2106) and (0.2516,2.2392) .. 
+	(0.2516,2.2392) .. controls (0.4352,2.2933) and (0.7427,1.9304) .. 
+	(0.5743,2.3885) .. controls (0.6017,2.3633) and (0.8307,2.1739) .. 
+	(0.8082,2.4245) .. controls (0.8271,2.2885) and (0.9195,2.2400) .. 
+	(0.9933,2.2673) .. controls (1.0814,2.6593) and (0.9688,2.0034) .. 
+	(1.3350,2.3615) .. controls (1.3657,2.3292) and (1.1627,2.1043) .. 
+	(1.3424,2.1387) .. controls (1.3102,1.8312) and (1.5049,2.2623) .. 
+	(1.5049,2.2623) .. controls (1.5049,2.2623) and (1.4675,2.0493) .. 
+	(1.4287,1.9560) .. controls (1.4287,1.9560) and (1.6830,1.9470) .. 
+	(1.7178,1.8823) .. controls (1.1926,1.8054) and (2.0160,1.7277) .. 
+	(1.4923,1.7275) .. controls (1.5366,1.6685) and (1.3013,1.6009) .. 
+	(1.6500,1.5946) .. controls (0.8836,1.5797) and (1.2764,1.9221) .. 
+	(0.8957,2.0442) .. controls (0.5516,2.0958) and (0.5228,1.8527) .. 
+	(0.4695,1.7963) .. controls (0.4825,1.9607) and (0.3601,1.9095) .. 
+	(0.1977,1.9023) -- cycle
+}
+
+\newcommand{\duckpathrecedinghair}{%
+	(1.3385,1.4841) .. controls (1.4243,1.4529) and (1.4877,1.7127) .. 
+	(1.3964,1.8658) .. controls (1.1071,2.3511) and (0.5189,2.1609) .. 
+	(0.4381,1.6816) .. controls (0.4575,1.9618) and (0.9007,2.2059) .. 
+	(1.1308,2.0390) .. controls (1.4703,1.7469) and (1.0343,1.5949) .. 
+	(1.3385,1.4841) -- cycle
+}
+
+\newcommand{\duckpathcape}{%
+	(0.225,0.966) .. controls (1.314,0.961) and (2.070,0.650) .. (2.042,1.245) .. controls (1.863,1.164) and (1.844,1.173) .. (1.792,1.340) .. controls (1.635,1.235) and (1.620,1.268) .. (1.567,1.393) .. controls (1.358,1.086) and (0.664,1.096) .. (0.460,1.110) .. controls (0.461,1.133) and (0.305,1.077) .. (0.235,0.966) -- cycle
+}
+
+\newcommand{\duckpathcrown}{%
+	(0.71,2.06) .. controls (0.71,2.06) and (0.73,2.18) .. 
+	(0.60,2.45) -- (0.83,2.26) -- (0.95,2.44) -- (1.07,2.26) -- (1.31,2.44) .. controls (1.15,2.19) and (1.20,2.06) .. 
+	(1.20,2.06) .. controls (1.07,1.98) and (0.84,1.98) .. 
+	(0.71,2.06) -- cycle
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    32237378723223                                   
+%                 23737232212232237822                                
+%               3282232232232232232<3723                              
+%              382232232232232232232232232                            
+%             72232322323323223223223223282                           
+%            7503223223522332322322322322372                          
+%           9hklke23232<252<2322322322322323                          
+%          9jzltrg22320fklke23232232232232232                         
+%          0lzp ye252qkzliuk92323223223223223                         
+%          2dkfaw233<fzl, .g623232232232232282                        
+%          3<<432325<eklits9232322322322322322                        
+%         ++#@o$;<32329edw22322322322322322323                        
+%       o++oo@oooo%::12<<<<123223223223223223             328         
+%      o++o+oo+o+oooooO@=*:<32232232232232232         323782282       
+%      +o+oo+o+oooooo%-:12232232232232232232      23237322322373      
+%      ++@+++o o+%-:<32232232232232232232232 32237822322322322322     
+%       +oOoo&><<32232232232232232232232232282822322322322322322372   
+%          37232232232232232232232232232232232232232232232232232237<  
+%       728282232232232232232232232232232232232232232232232232232232  
+%     282232232232232232232232232232232232232232232232232232232232232 
+%   282232232232232232232232232232232232232232232232232232232232232282
+%  7322322322322322322322322322322322322322322322322322322322322322322
+% 23223223223223223223223223223223223223223223223223223223223223223223
+%322322322322322322322322322322322322322322322322322322322322322322322
+%322322322322322322322322322322322322322322322322322322322322322322322
+%232232232232232232232232232232232232232232232232232232232232232232282
+%82232232232232232232232232232232232232232232232232232232232232232282 
+%3223223223223223223223223223223223223223223223223223223223223223282  
+%273223223223223223223223223223223223223223223223223223223223223723   
+% 273223223223223223223223223223223223223223223223223223223223723     
+%  228223223223223223223223223223223223223223223223223223228232       
+%    2822322322322322322322322322322322322322322322322378232          
+%      2378223223223223223223223223223223223223223782232              
+%         322378282232232232232232232232282878223223                  
+%              223232232282828282322322323223            
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% stripes for sports jerseys
+%
+% code contributed  by Carla Maggi
+% https://tex.stackexchange.com/a/387126/36296
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand*{\stripes}[1][]{\tikzset{%
+	/stripes/.cd,#1}\stripes@draw%
+}
+
+\tikzset{
+	/stripes/.cd,
+	color/.code			= \def\stripes@color{#1},
+	distance/.code	= \def\stripes@distance{#1},
+	width/.code			= \def\stripes@width{#1},
+	height/.code		= \def\stripes@height{#1},
+	initialx/.code	= \def\stripes@initialx{#1},
+	initialy/.code	= \def\stripes@initialy{#1},
+	rotate/.code		= \def\stripes@rotate{#1},
+	emblem/.code		= \def\stripes@emblem{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	color			= black,
+	distance	= 0.3,
+	width			= 0.15,
+	height		= 2.7,
+	initialx	= 0.1,
+	initialy	= -0.3,
+	rotate		= -10,
+	emblem		= \empty
+}
+
+\def\stripes@draw{%
+	\path (0.1,0.1) rectangle (2.1,1.45);
+	\begin{pgfinterruptboundingbox}
+		\begin{scope}
+			\clip \duckpathjacket;
+	    \foreach \shifta in {0,\stripes@distance,...,2.4}{%
+	    	\fill[\stripes@color,rotate around={\stripes@rotate:(1.2,0.9)}] 
+				($(\stripes@initialx,\stripes@initialy)+(\shifta,0)$) rectangle ($(\stripes@initialx,\stripes@initialy)+(\shifta,0)+(\stripes@width,\stripes@height)$);
+			}
+		\end{scope}
+ 	\end{pgfinterruptboundingbox}
+ 	\node at (wing) {\stripes@emblem };
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%.........................%%%%%%%%%%%%%%%%%%%.........................
+%....................%%%%%%%%%............%%%%%%%%....................
+%................%%%%%%....%%...................%%%%%%................
+%.............%%%%%.......%%%.......................%%%%%.............
+%...........%%%%........%%%%%%%%%...................%%%%%%%...........
+%.........%%%........%%%%%%%%%%%%%%%%..............%%%%%%%%%%.........
+%.......%%%.......%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%.......
+%......%%%...%%%%%%%%%%%%%%%%%%%%%%%%%%..............%%%%%%%%%%%......
+%.....%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%................%%%%%%%%%%%.....
+%...%%%%........%%%%%%%%%%%%%%%%%%%%%...................%%%%%%%%%%%...
+%...%%%..........%%%%%%%%%%%%%%%%%%%.....................%%%%%%%%%%...
+%..%%%............%%%%%%%%%%%%%%%%%.......................%%%%%%%%%%..
+%.%%%%............%%%%%%%%%%%%%%%%%........................%%%%%%%%%%.
+%.%%%..............%%%%%%%.......%%%......................%%%.....%%%.
+%%%%..............%%...............%%%...................%%%.......%%%
+%%%..............%%.................%%%..................%%.........%%
+%%%%............%%%...................%%%...............%%..........%%
+%%%%...........%%%.....................%%%.............%%...........%%
+%%%%%..........%%........................%%%%%%%%%%%%%%%%...........%%
+%%%%%........%%%........................%%%%%%%%%%%%%%%%%%.........%%%
+%.%%%%%%%%%%%%%%%......................%%%%%%%%%%%%%%%%%%%.........%%.
+%.%%%%%%%%%%%%%%%%.....................%%%%%%%%%%%%%%%%%%%........%%%.
+%..%%%%%%%%%%%%%%%%...................%%%%%%%%%%%%%%%%%%%%%.......%%..
+%...%%%%%%%%%%%%%%%%%................%%%%%%%%%%%%%%%%%%%%%%......%%...
+%...%%%%%%%%%%%%%%%%%%............%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%....
+%.....%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%....%%%.....
+%......%%%%%%%%%%%%%%%%................%%%%%%%%%%%%%%%%......%%%......
+%.......%%%%%%%%%%%%%%....................%%%%%%%%%%........%%%.......
+%.........%%%%%%%%%%%........................%%%%.........%%%.........
+%...........%%%%%%%%%........................%%........%%%%...........
+%.............%%%%%%%%%.....................%%......%%%%%.............
+%................%%%%%%%%.................%%%...%%%%%%................
+%....................%%%%%%%%......%%%%%%%%%%%%%%%....................
+%..........................%%%%%%%%%%%%%%%%%..........................
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
