@@ -1,0 +1,48 @@
+!config
+# Convert .pdf to any format file allowed by ImageMagick convert command (the default is png)
+# author: CarLaTeX
+# last edited by: CarLaTeX, Dicember 26th 2016
+# requires arara 3.0+
+#
+# Sample usage: 
+# - these both create a .png file
+# % arara: convert
+# % arara: convert: {format: png}
+#
+# - this creates a .gif file with red background
+# % arara: convert: {format: gif, background: red}
+#
+# - this creates a .png file with a trimmed image 
+#   (use the parameter "otheroptions" to add any option not already explicitly considered by the rule, 
+#   that is any option different from -background, -alpha, -density and -quality}
+# % arara: convert: {otheroptions: -trim +repage}
+#
+#
+# This rule is really just a shortcut for commands like the following:
+#
+#  convert -density 300 myfile.pdf myfile.png
+#
+# which will output myfile.png
+#
+identifier: convert
+name: convert
+commands: 
+- <arara> @{ isWindows( "cmd /c convert", "convert" ) } -background @{background} -alpha @{alpha} -density @{density} @{otheroptions} "@{ getBasename(file) }.pdf" -quality @{quality} "@{ getBasename(file) }.@{format}"
+arguments:
+- identifier: density
+  flag: <arara> @{parameters.density}
+  default: 150
+- identifier: otheroptions
+  flag: <arara> @{parameters.otheroptions}
+- identifier: quality
+  flag: <arara> @{parameters.quality}
+  default: 100
+- identifier: background
+  flag: <arara> @{parameters.background}
+  default: white
+- identifier: alpha
+  flag: <arara> @{parameters.alpha}
+  default: remove
+- identifier: format
+  flag: <arara> @{parameters.format}
+  default: png

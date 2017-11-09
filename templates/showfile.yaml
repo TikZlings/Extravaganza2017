@@ -1,0 +1,25 @@
+!config
+# Open the every <filename>.<format> that can be opened
+# The default for <filename> is the current file.
+# The default for <format> is pdf. 
+# author: CarLaTeX
+# last edited by: CarLaTeX, February 19th 2016
+# requires arara 3.0+
+#
+# Sample usage: 
+# - if myfile.tex is the current file, all these open myfile.pdf
+# % arara: showfile
+# % arara: showfile {format: pdf}
+# % arara: showfile {filename: myfile, format: pdf}
+# and both these open myfile.log:
+# % arara: showfile {format: log}
+# % arara: showfile {filename: myfile, format: log}
+#
+identifier: showfile
+name: showfile
+commands: 
+- <arara> @{ isWindows( "cmd /c start", "xdg-open" ) } "@{ getBasename(file) }.@{format}"
+arguments:
+- identifier: format
+  flag: <arara> @{parameters.format}
+  default: pdf
