@@ -6,13 +6,56 @@
 \usepackage[utf8]{inputenc} %probably not needed ...
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
-\geometry{papersize={128mm,96mm}}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[x11names]{xcolor}
 \usepackage{tikzducks}
+\usetikzlibrary{shapes.geometric}
 \pagestyle{empty}
-
+\parindent=0pt
 \usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{xfp}
+\tikzstyle{witchstars}=[star, star points=5, star point ratio=2.25, draw,inner sep=1.3pt,anchor=outer point 3]
+
+\newcommand{\mystar}{%
+    \pgfmathsetmacro\xposition{12.4*rnd}
+    \pgfmathsetmacro\yposition{2.6*rnd+6.5}
+    \pgfmathsetmacro\starsize{1.8+1.5*rnd}
+    \pgfmathsetmacro\starcolor{random(10,75)}
+    \node[witchstars,fill=yellow!\starcolor!white,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    }
 
 \begin{document}
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \fill[DeepSkyBlue3] (0,0) rectangle (\paperwidth,\paperheight);
+ \pgfmathsetseed{2}
+ \foreach \x in {1,2,...,50}{\mystar}
+ \end{tikzpicture}}}
+
+%\begin{tikzpicture}
+%\path (0,0) rectangle (\textwidth,\textheight);
+%\pgfmathsetseed{2}
+%\foreach \x in {1,2,...,50}{\mystar}
+%\end{tikzpicture}
+
+\foreach \x in {1,2,...,100}{
+\begin{tikzpicture}
+\path (0,0) rectangle (\textwidth,\textheight);
+\begin{scope}[overlay,xshift=\fpeval{0.67-\x*(0.67/100)}\textwidth,yshift=\fpeval{sin(\x/100)}cm ]
+\begin{scope}[scale=2]
+\duck[witch=black!50!gray,
+longhair=red!80!black,
+jacket=black!50!gray,
+magicwand]
+\end{scope}
+\end{scope}
+\end{tikzpicture}}
+
+
+
+\end{document}
 
 \begin{animateinline}[loop,autoplay]{10}
 \multiframe{130}{dright=0cm+0.4mm}{%
@@ -28,4 +71,4 @@ magicwand]
 
 \end{animateinline}
 
-\end{document}
+\end{document} 

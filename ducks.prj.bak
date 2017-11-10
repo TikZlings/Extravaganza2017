@@ -1,0 +1,540 @@
+31 Patch Control
+
+0
+0
+1
+ulrikes-duck-pond\witch-duck-UF.tex
+176
+4
+1
+
+.gitignore
+DATA
+5243122 0 0 1 36 6 192 192 1888 706 1 0 161 667 -1 -1 0 0 -1 -1 -1 -1 1 0 6 36  0 0 0
+ulrikes-duck-pond\witch-duck-UF.tex
+TeX:UTF-8:Main
+420491259 0 -1 1590 -1 1589 224 224 1920 738 0 1 829 207 -1 -1 0 0 -1 -1 -1 -1 1 0 1589 -1  0 -1 0
+D:\texlive\2017\texmf-dist\tex\latex\eso-pic\eso-pic.sty
+TeX:STY:UNIX
+1159154 1 134 35 134 13 32 32 1728 546 0 0 173 184 -1 -1 0 0 -1 -1 -1 -1 1 0 13 134  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\tikzducks\tikzducks.sty
+TeX:STY:UNIX
+1159154 0 0 1 0 1 0 0 1696 514 0 0 29 -4485 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Beratung\20171101-hempelmann\Arbeit\LaTeX\Diss216-utf8.tex
+TeX:DE:UTF-8:Main:UNIX
+286371835 0 -1 3827 -1 4122 32 32 1728 546 0 1 109 437 -1 -1 0 0 -1 -1 -1 -1 1 0 4122 -1  0 -1 0
+G:\Z-Test\test-utf8.tex
+TeX:DE:UTF-8:Main
+17838075 0 -1 404 -1 406 960 0 1920 686 0 1 49 276 -1 -1 0 0 29 -1 -1 29 1 0 406 -1  0 -1 0
+:\Beratung\20171101-hempelmann\Arbeit\LaTeX\Diss216-utf8.log
+DATA:UNIX
+38895858 0 2422 123 13925 1 96 96 1792 610 1 0 101 5888 -1 -1 0 0 -1 -1 -1 -1 1 0 1 13925  0 0 0
+:\Beratung\20171101-hempelmann\Arbeit\LaTeX\chapter-2-informationstheorie.tex
+TeX
+1060859 2 -1 19673 -1 19682 160 160 1856 674 0 1 169 368 -1 -1 0 0 -1 -1 -1 -1 1 0 19682 -1  0 -1 0
+:\Beratung\20171101-hempelmann\Arbeit\LaTeX\chapter-1-einleitung.tex
+TeX
+1060859 0 -1 0 -1 0 128 128 1824 642 0 1 49 -621 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+:\Beratung\20171101-hempelmann\Arbeit\LaTeX\Diss216-utf8.blg
+DATA
+38797554 0 0 1 0 1 64 64 1760 578 1 0 101 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Beratung\20171101-hempelmann\Arbeit\.gitignore
+DATA
+5243122 0 18 1 24 1 0 0 1696 514 1 0 101 552 -1 -1 0 0 -1 -1 -1 -1 1 0 1 24  0 0 0
+:\Beratung\20171001-Gesis\Arbeit\tests\gesis-beamer.tex
+TeX:DE:UTF-8:Main
+286273531 0 -1 312 -1 314 224 224 1920 738 0 1 217 138 -1 -1 0 0 29 -1 -1 29 1 0 314 -1  0 -1 0
+:\Beratung\20171001-Gesis\Arbeit\texmf\tex\latex\gesis\gesis-colordefinitions.cfg
+DATA
+5243122 0 17 30 1 75 32 32 1728 546 1 0 989 23 -1 -1 0 0 -1 -1 -1 -1 1 0 75 1  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\base\latex.ltx
+TeX:UNIX
+1159163 2 -1 32946 -1 32948 960 0 1920 686 0 1 337 368 -1 -1 0 0 2 -1 -1 2 1 0 32948 -1  0 -1 0
+:\Beratung\Kunden\Rechnung2017.tex
+TeX:DE:UTF-8:Main
+17838075 1 -1 1863 -1 1837 64 64 1760 552 0 1 49 161 -1 -1 0 0 -1 -1 -1 -1 1 0 1837 -1  0 -1 0
+:\Beratung\Kunden\kunden.bib
+BibTeX
+1049586 0 3 86 3 78 32 32 1728 520 0 1 973 -966 -1 -1 0 0 -1 -1 -1 -1 1 0 78 3  0 -1 0
+:\TeXroots\UFlocaltexmf\tex\latex\biblatex\uf-biblatex.sty
+TeX:STY
+1060850 0 27 71 27 3 96 96 1792 584 0 0 53 414 -1 -1 0 0 -1 -1 -1 -1 1 0 3 27  0 0 0
+:\Beratung\20171001-Gesis\Arbeit\.gitignore
+DATA
+5243122 0 28 1 28 1 128 128 1824 642 1 0 101 506 -1 -1 0 0 20 0 0 20 1 0 1 28  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\base\t1enc.def
+TeX:STY:UNIX
+1159154 1 47 29 47 1 0 0 1696 488 0 0 29 322 -1 -1 0 0 -1 -1 -1 -1 1 0 1 47  0 0 0
+D:\texlive\2017\texmf-dist\tex\generic\babel-portuges\portuges.ldf
+TeX:STY:UNIX
+1159154 2 172 20 172 22 224 224 1920 712 0 0 281 390 -1 -1 0 0 -1 -1 -1 -1 1 0 22 172  0 0 0
+G:\Z-Test\test-utf8.log
+DATA:UNIX
+38895858 1 36 2 36 68 960 0 1920 686 1 0 905 322 -1 -1 0 0 100 0 0 100 1 0 68 36  0 0 0
+D:\texlive\2017\texmf-dist\tex\generic\babel\babel.sty
+TeX:STY:UNIX
+1159154 0 0 1 0 1 960 0 1920 686 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\base\article.cls
+TeX:STY:UNIX
+1159154 2 240 19 240 25 960 0 1920 686 0 0 317 345 -1 -1 0 0 3 0 0 3 1 0 25 240  0 0 0
+:\Dropbox\Lektorat\bibdesk\DissBib5.bib
+BibTeX
+1049586 0 0 1 0 1 96 96 1792 610 0 1 49 -552 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 -1 0
+C:\Users\Nililand\AppData\Local\Temp\bat\Diss216.log
+DATA:UNIX
+5341426 0 0 1 0 1 32 32 1728 546 1 0 101 -104262 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\context\base\mkii\supp-pdf.mkii
+DATA:UNIX
+5341426 1 129 2 134 1 0 0 1696 514 1 0 101 460 -1 -1 0 0 -1 -1 -1 -1 1 0 1 134  0 0 0
+G:\Z-Test\test-utf8.tuc
+DATA
+5243122 0 0 1 0 1 192 192 1888 706 1 0 101 -6553 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Beratung\20171001-Gesis\Arbeit\tests\gesis-farben-logo-test.tex
+TeX:DE:UTF-8:Main
+17838075 1 -1 1225 -1 1410 0 0 1728 397 0 1 49 483 -1 -1 0 0 29 -1 -1 29 1 0 1410 -1  0 -1 0
+:\Beratung\20171001-Gesis\Arbeit\texmf\tex\latex\gesis\beamerthemeGesis.sty
+TeX:STY
+269496306 1 1 72 1 3 192 192 1888 706 0 0 53 23 -1 -1 0 0 24 0 0 24 1 0 3 1  0 0 0
+:\Beratung\20171001-Gesis\Arbeit\texmf\tex\latex\gesis\beamercolorthemeGesis.sty
+TeX:STY
+269496306 0 1 1 2 1 96 96 1792 610 0 0 29 46 -1 -1 0 0 1 1 1 1 1 0 1 2  0 0 0
+C:\Users\Nililand\AppData\Local\Temp\bat\Diss216.blg
+DATA:UNIX
+273776882 0 0 1 0 1 64 64 1760 578 1 0 101 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\beamer\beamer.cls
+TeX:STY:UNIX
+269594610 1 314 2 316 1 96 96 1792 610 0 0 29 529 -1 -1 0 0 38 0 0 38 1 0 1 316  0 0 0
+D:\MiKTeX2.9\tex\latex\beamer\beamerbasefont.sty
+TeX:STY:UNIX
+269594610 0 183 31 183 3 224 224 1920 738 0 0 53 368 -1 -1 0 0 38 0 0 38 1 0 3 183  0 0 0
+D:\MiKTeX2.9\tex\latex\beamer\beamerbaseframecomponents.sty
+TeX:STY:UNIX
+269594610 2 175 4 175 13 96 96 1792 584 0 0 173 713 -1 -1 0 0 38 0 0 38 1 0 13 175  0 0 0
+D:\MiKTeX2.9\tex\latex\cite\cite.sty
+TeX:STY:UNIX
+269594610 0 0 1 279 60 32 32 1728 494 0 0 737 207 -1 -1 0 0 22 0 0 22 1 0 60 279  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\libertinust1math\libertinust1math.sty
+TeX:STY:UNIX
+269594610 1 25 25 25 17 224 224 1920 686 0 0 221 299 -1 -1 0 0 37 0 0 37 1 0 17 25  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\base\book.cls
+TeX:STY:UNIX
+269594610 1 321 5 321 18 192 192 1888 680 0 0 233 368 -1 -1 0 0 3 0 0 3 1 0 18 321  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\preprint\authblk.sty
+TeX:STY:UNIX
+269594610 4 123 39 123 38 128 128 1824 616 0 0 473 368 -1 -1 0 0 3 0 0 3 1 0 38 123  0 0 0
+D:\MiKTeX2.9\tex\latex\biblatex\biblatex.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 128 128 1824 616 0 0 29 0 -1 -1 0 0 42 0 0 42 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\biblatex\biblatex.def
+TeX:STY:UNIX
+269594610 2 770 19 770 26 160 160 1856 648 0 0 329 552 -1 -1 0 0 28 0 0 28 1 0 26 770  0 0 0
+D:\MiKTeX2.9\tex\latex\unicode-math\unicode-math.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 0 0 1696 488 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\unicode-math\unicode-math-xetex.sty
+TeX:STY:UNIX
+269594610 1 2013 35 2013 12 96 96 1792 584 0 0 161 207 -1 -1 0 0 3 0 0 3 1 0 12 2013  0 0 0
+D:\MiKTeX2.9\tex\latex\unicode-math\unicode-math-luatex.sty
+TeX:STY:UNIX
+269594610 2 1992 18 1992 41 32 32 1728 520 0 0 509 276 -1 -1 0 0 3 0 0 3 1 0 41 1992  0 0 0
+D:\MiKTeX2.9\tex\latex\base\inputenc.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 160 160 1856 648 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\siunitx\siunitx.sty
+TeX:STY:UNIX
+269594610 2 70 22 70 25 128 128 1824 616 0 0 317 345 -1 -1 0 0 3 0 0 3 1 0 25 70  0 0 0
+D:\MiKTeX2.9\tex\latex\geometry\geometry.sty
+TeX:STY
+269496306 1 1007 15 1007 11 64 64 1760 552 0 0 149 667 -1 -1 0 0 3 0 0 3 1 0 11 1007  0 0 0
+D:\MiKTeX2.9\tex\latex\base\latex.ltx
+TeX:UNIX
+269594619 2 -1 182458 -1 182464 960 0 1920 686 0 1 181 345 -1 -1 0 0 2 -1 -1 2 1 0 182464 -1  0 -1 0
+D:\MiKTeX2.9\tex\latex\base\fontmath.ltx
+TeX:UNIX
+269594619 1 -1 2368 -1 2421 64 64 1760 552 0 1 49 345 -1 -1 0 0 2 -1 -1 2 1 0 2421 -1  0 -1 0
+D:\texlive\2017\texmf-dist\tex\latex\fontspec\fontspec.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 64 64 1760 578 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\fontspec\fontspec-luatex.sty
+TeX:STY:UNIX
+269594610 2 1994 64 1994 74 96 96 1792 610 0 0 905 667 -1 -1 0 0 3 0 0 3 1 0 74 1994  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\setspace\setspace.sty
+TeX:STY:UNIX
+269594610 2 288 17 288 22 32 32 1728 546 0 0 281 368 -1 -1 0 0 24 0 0 24 1 0 22 288  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\footmisc\footmisc.sty
+TeX:STY:UNIX
+269594610 1 321 3 321 19 224 224 1920 738 0 0 245 207 -1 -1 0 0 3 0 0 3 1 0 19 321  0 0 0
+D:\MiKTeX2.9\tex\latex\base\ts1enc.dfu
+TeX:STY:UNIX
+269594610 1 70 1 70 43 224 224 1920 712 0 0 533 414 -1 -1 0 0 3 0 0 3 1 0 43 70  0 0 0
+D:\MiKTeX2.9\tex\latex\base\utf8.def
+TeX:STY:UNIX
+269594610 2 209 34 209 37 192 192 1888 680 0 0 461 322 -1 -1 0 0 3 0 0 3 1 0 37 209  0 0 0
+D:\MiKTeX2.9\tex\latex\beamer\themes\font\beamerfontthemeprofessionalfonts.sty
+TeX:STY:UNIX
+269594610 1 10 49 10 21 192 192 1888 706 0 0 269 230 -1 -1 0 0 32 0 0 32 1 0 21 10  0 0 0
+D:\texlive\2017\texmf-dist\tex\generic\babel-french\french.ldf
+TeX:STY:UNIX
+269594610 1 1741 30 1741 16 960 0 1920 686 0 0 209 299 -1 -1 0 0 3 0 0 3 1 0 16 1741  0 0 0
+D:\MiKTeX2.9\tex\latex\beamer\beamerbaseauxtemplates.sty
+TeX:STY:UNIX
+269594610 1 557 1 559 1 128 128 1824 642 0 0 29 414 -1 -1 0 0 38 0 0 38 1 0 1 559  0 0 0
+C:\Users\Nililand\Downloads\texmf-doc-latex-hh-hhccount.tex
+TeX
+269496315 0 -1 0 -1 0 0 0 1696 462 0 1 49 -8694 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+D:\MiKTeX2.9\tex\latex\base\article.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 0 0 1696 488 0 0 29 -464 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\l3packages\xfrac\xfrac.sty
+TeX:STY:UNIX
+269594610 1 337 1 347 4 96 96 1792 584 0 0 65 322 -1 -1 0 0 -1 -1 -1 -1 1 0 4 347  0 0 0
+G:\Z-Test\luaotfload.conf
+DATA
+273678578 0 0 1 4 1 64 64 1760 552 1 0 101 92 -1 -1 0 0 -1 -1 -1 -1 1 0 1 4  0 0 0
+G:\Z-Test\svjour3.cls
+TeX:STY:UNIX
+269594610 0 0 1 0 1 128 128 1824 616 0 0 29 -3519 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\acmart\acmart.cls
+TeX:STY
+269496306 2 471 2 471 11 32 32 1728 520 0 0 149 391 -1 -1 0 0 3 0 0 3 1 0 11 471  0 0 0
+D:\MiKTeX2.9\tex\latex\graphics\dvipsnam.def
+TeX:STY
+269496306 0 0 1 0 1 0 0 1696 488 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\graphics-cfg\color.cfg
+DATA:UNIX
+273776882 0 0 1 0 1 224 224 1920 712 1 0 101 0 -1 -1 0 0 53 0 0 53 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\xcolor\xcolor.sty
+TeX:STY
+269496306 2 169 18 169 25 96 96 1792 610 0 0 317 437 -1 -1 0 0 3 0 0 3 1 0 25 169  0 0 0
+D:\MiKTeX2.9\tex\latex\xcolor\x11nam.def
+TeX:STY
+269496306 0 0 1 0 1 128 128 1824 642 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\MiKTeX2.9\tex\latex\xcolor\svgnam.def
+TeX:STY
+269496306 0 0 1 0 1 160 160 1856 674 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\mayaps-d.tex
+TeX:UNIX
+269594619 0 -1 0 -1 687 192 192 1888 706 0 1 169 345 -1 -1 0 0 23 -1 -1 23 1 0 687 -1  0 -1 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\mayaps.tex
+TeX:UNIX
+269594619 2 -1 40663 -1 40667 96 96 1792 610 0 1 325 391 -1 -1 0 0 69 -1 -1 69 1 0 40667 -1  0 -1 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\mayaglyphs.tex
+TeX
+269496315 1 -1 2 -1 656 192 192 1888 706 0 1 217 644 -1 -1 0 0 0 -1 -1 0 1 0 656 -1  0 -1 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\test-inputglyphs.tex
+TeX
+269496315 1 -1 0 -1 278 32 32 1728 546 0 1 217 184 -1 -1 0 0 23 -1 -1 23 1 0 278 -1  0 -1 0
+:\Beratung\20130302-Tamegger\Arbeit\Quadratische_Gleichungen.tex
+TeX
+269496315 1 -1 1170 -1 1483 64 64 1760 578 0 1 49 391 -1 -1 0 0 66 -1 -1 66 1 0 1483 -1  0 -1 0
+D:\MiKTeX2.9\tex\latex\auto-pst-pdf\auto-pst-pdf.sty
+TeX:STY:UNIX
+269594610 2 140 11 140 23 224 224 1920 738 0 0 293 414 -1 -1 0 0 3 0 0 3 1 0 23 140  0 0 0
+D:\texlive\2017\texmf-dist\tex\luatex\luaotfload\luaotfload.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 160 160 1856 648 0 0 29 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-var\luatex-cache\generic\fonts\otl\dejavusans.lua
+DATA
+273678578 0 0 1 0 1 0 0 1696 488 1 0 101 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-var\luatex-cache\generic\names\luaotfload-names.lua
+DATA:UNIX
+273776882 0 61880 16 61870 5 96 96 1792 584 1 0 149 161 -1 -1 0 0 -1 -1 -1 -1 1 0 5 61870  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\polyglossia\gloss-french.ldf
+DATA:UNIX
+273776882 1 51 3 51 99 64 64 1760 552 1 0 1277 483 -1 -1 0 0 -1 -1 -1 -1 1 0 99 51  0 0 0
+D:\texlive\2017\texmf-var\luatex-cache\generic\names\luaotfload-lookup-cache.lua
+DATA
+273678578 0 0 1 0 1 224 224 1920 712 1 0 101 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\luatex\luaotfload\luaotfload-database.lua
+DATA:UNIX
+273776882 0 1013 7 218 10 192 192 1888 680 1 0 177 42 -1 -1 0 0 -1 -1 -1 -1 1 0 10 218  0 0 0
+D:\texlive\2017\texmf-dist\scripts\luaotfload\luaotfload-tool.lua
+DATA:UNIX
+273776882 2 1300 28 1300 33 32 32 1728 520 1 0 407 3003 -1 -1 0 0 -1 -1 -1 -1 1 0 33 1300  0 0 0
+G:\Z-Test\test-utf8Notes.bib
+BibTeX:UNIX
+269583346 0 0 71 0 70 128 128 1824 616 0 1 735 0 -1 -1 0 0 -1 -1 -1 -1 1 0 70 0  0 -1 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\test-standalone.tex
+TeX
+403714043 0 -1 546 -1 546 192 192 1888 706 0 1 395 567 -1 -1 0 0 -1 -1 -1 -1 1 0 546 -1  0 -1 0
+:\Ulle-Doku\diverses\bestpackages.tex
+TeX
+269496315 0 -1 0 -1 0 64 64 1760 578 0 1 45 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\red89.tex
+TeX:UNIX
+403812347 0 -1 0 -1 0 128 128 1824 642 0 1 45 -795 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+C:\Users\Nililand\Downloads\mayaps-1-1b.tar\README
+DATA:UNIX
+407994610 0 0 1 0 1 160 160 1856 674 1 0 87 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Beratung\20170801-ifo\Arbeit\ifotexmf\tex\latex\iforeport\ifostudie.sty
+TeX:STY
+1060850 1 38 1 40 1 128 128 1824 616 0 0 27 84 -1 -1 0 0 68 0 0 68 1 0 1 40  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\color\beamercolorthemedefault.sty
+TeX:STY:UNIX
+1159154 1 94 28 94 1 160 160 1856 674 0 0 27 189 -1 -1 0 0 32 0 0 32 1 0 1 94  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\inner\beamerinnerthemedefault.sty
+TeX:STY:UNIX
+1159154 0 39 1 45 53 0 0 1696 488 0 0 599 945 -1 -1 0 0 -1 -1 -1 -1 1 0 53 45  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\font\beamerfontthemedefault.sty
+TeX:STY:UNIX
+1159154 1 69 56 69 45 96 96 1792 584 0 0 511 273 -1 -1 0 0 32 0 0 32 1 0 45 69  0 0 0
+:\Beratung\20171001-Gesis\Arbeit\tests\gesis-beamer.log
+DATA
+38797554 1 1089 2 1089 84 32 32 1728 546 1 0 1006 357 -1 -1 0 0 123 0 0 123 1 0 84 1089  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\color\beamercolorthemewhale.sty
+TeX:STY:UNIX
+1159154 0 0 1 0 1 64 64 1760 578 0 0 27 0 -1 -1 0 0 32 0 0 32 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\color\beamercolorthemelily.sty
+TeX:STY:UNIX
+1159154 1 11 1 18 46 128 128 1824 642 0 0 522 378 -1 -1 0 0 32 0 0 32 1 0 46 18  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\outer\beamerouterthemedefault.sty
+TeX:STY:UNIX
+1159154 2 148 21 148 27 224 224 1920 712 0 0 313 21 -1 -1 0 0 32 0 0 32 1 0 27 148  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\theme\beamerthemeboxes.sty
+TeX:STY:UNIX
+1159154 0 0 1 0 1 0 0 1696 488 0 0 27 0 -1 -1 0 0 32 0 0 32 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\beamer\themes\outer\beamerouterthemeinfolines.sty
+TeX:STY:UNIX
+1159154 1 32 5 32 51 32 32 1728 520 0 0 577 210 -1 -1 0 0 32 0 0 32 1 0 51 32  0 0 0
+:\Beratung\20171001-Gesis\Eingang\Kolb_StatistikTL_KiTaAnalyse.log
+DATA
+5243122 0 0 1 0 1 160 160 1920 537 1 0 93 0 -1 -1 0 0 115 0 0 115 1 0 1 0  0 0 0
+G:\Z-Test\test-utf8.fls
+DATA
+5243122 0 0 1 0 1 64 64 1760 552 1 0 93 0 -1 -1 0 0 14 0 0 14 1 0 1 0  0 0 0
+F:\gitprojekte\xetex\source\texk\web2c\xetexdir\xetex.web
+DATA
+273678578 0 17821 13 17822 43 0 0 1696 514 1 0 555 651 -1 -1 0 0 -1 -1 -1 -1 1 0 43 17822  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\unicode-math\unicode-math-xetex.sty
+TeX:STY:UNIX
+269594610 1 1206 41 1206 25 160 160 1856 648 0 0 291 231 -1 -1 0 0 -1 -1 -1 -1 1 0 25 1206  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\url\url.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 160 160 1856 674 0 0 27 0 -1 -1 0 0 69 0 0 69 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\threeparttable\threeparttable.sty
+TeX:STY:UNIX
+269594610 1 231 59 231 44 128 128 1824 642 0 0 500 189 -1 -1 0 0 60 0 0 60 1 0 44 231  0 0 0
+D:\MiKTeX2.9\tex\latex\base\article.cls
+TeX:STY:UNIX
+269594610 0 0 1 0 1 960 0 1920 686 0 0 27 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+G:\Z-Test\sas1.txt
+ASCII:UNIX
+273786747 0 0 1 0 1 192 192 1888 706 1 0 93 0 -1 -1 0 0 33 0 0 33 1 0 1 0  0 0 0
+G:\Z-Test\test-utf8.records
+DATA
+273678578 0 0 1 0 1 160 160 1856 674 1 0 93 0 -1 -1 0 0 1 0 0 1 1 0 1 0  0 0 0
+G:\Z-Test\test-empty.tex
+TeX
+269496315 0 -1 0 -1 0 96 96 1824 493 0 1 45 0 -1 -1 0 0 0 -1 -1 0 1 0 0 -1  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\tcolorbox\tcblistings.code.tex
+TeX:UNIX
+269594619 0 -1 0 -1 0 224 224 1920 738 0 1 45 0 -1 -1 0 0 58 -1 -1 58 1 0 0 -1  0 -1 0
+D:\texlive\2017\texmf-dist\tex\latex\tcolorbox\tcbprocessing.code.tex
+TeX:UNIX
+269594619 0 -1 0 -1 0 0 0 1696 514 0 1 45 0 -1 -1 0 0 58 -1 -1 58 1 0 0 -1  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\tcolorbox\tcblistingscore.code.tex
+TeX:UNIX
+269594619 4 -1 6493 -1 6494 32 32 1728 546 0 1 562 336 -1 -1 0 0 58 -1 -1 58 1 0 6494 -1  0 -1 0
+D:\texlive\2017\texmf-dist\tex\latex\unicode-math\unicode-math-luatex.sty
+TeX:STY:UNIX
+269594610 2 138 12 138 33 192 192 1888 680 0 0 379 336 -1 -1 0 0 -1 -1 -1 -1 1 0 33 138  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\unicode-math\unicode-math.sty
+TeX:STY:UNIX
+269594610 0 0 1 0 1 128 128 1824 642 0 0 27 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Beratung\20171001-Gesis\Eingang\GS_Logo+aGB_3c_ohne_Schatten.ai
+DATA
+273744114 0 0 1 0 1 0 0 1696 514 1 0 101 -10005 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Beratung\20171001-Gesis\Eingang\ps2017-08-gesis-panel-summer_school.log
+DATA
+5243122 0 0 1 7 52 0 0 1760 377 1 0 713 161 -1 -1 0 0 -1 -1 -1 -1 1 0 52 7  0 0 0
+:\Ulle-Doku\sk\mitglieder.bib
+BibTeX
+1049586 1 284 41 284 14 960 0 1920 686 0 1 205 322 -1 -1 0 0 1 0 0 1 1 0 14 284  0 -1 0
+D:\texlive\2017\texmf-dist\tex\latex\mdframed\mdframed.sty
+TeX:STY:UNIX
+1159154 2 1378 11 1378 21 128 128 1888 505 0 0 269 -989 -1 -1 0 0 -1 -1 -1 -1 1 0 21 1378  0 0 0
+C:\Users\Nililand\Downloads\yplan00b.tex
+TeX:UNIX
+1159163 0 -1 0 -1 0 192 192 1888 654 0 1 49 0 -1 -1 0 0 15 -1 -1 15 1 0 0 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\puenc.def
+TeX:STY
+1060850 0 0 1 0 1 960 0 1920 686 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\puarenc.def
+TeX:STY
+1060850 0 87 59 87 54 960 0 1920 686 0 0 665 621 -1 -1 0 0 3 0 0 3 1 0 54 87  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\hyperref\ChangeLog.xml
+DATA
+5243122 1 241 16 241 27 960 0 1920 686 1 0 413 92 -1 -1 0 0 42 0 0 42 1 0 27 241  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\base\tuenc.def
+TeX:STY:UNIX
+1159154 1 127 20 127 35 960 0 1920 686 0 0 437 322 -1 -1 0 0 3 0 0 3 1 0 35 127  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\baskervillef\baskervillef.sty
+TeX:STY:UNIX
+1159154 2 156 6 156 14 960 0 1920 686 0 0 185 368 -1 -1 0 0 3 0 0 3 1 0 14 156  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\pdfx\l8uenc.def
+TeX:STY:UNIX
+1159154 1 2291 1 2291 41 960 0 1920 686 0 0 497 368 -1 -1 0 0 3 0 0 3 1 0 41 2291  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\pdfx\pdfx.sty
+TeX:STY:UNIX
+1159154 2 402 20 402 38 960 0 1920 686 0 0 473 368 -1 -1 0 0 3 0 0 3 1 0 38 402  0 0 0
+D:\texlive\2017\texmf-dist\tex\generic\babel-french\frenchb.lua
+DATA:UNIX
+5341426 2 130 8 130 12 960 0 1920 686 1 0 233 391 -1 -1 0 0 5 0 0 5 1 0 12 130  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\biblatex\biblatex.sty
+TeX:STY:UNIX
+1159154 0 0 1 0 1 96 96 1792 558 0 0 29 0 -1 -1 0 0 42 0 0 42 1 0 1 0  0 0 0
+G:\Z-Test\test-utf8_Daten.xfdf
+DATA:UNIX
+5341426 0 0 1 0 1 128 128 1824 590 1 0 101 0 -1 -1 0 0 39 0 0 39 1 0 1 0  0 0 0
+C:\Users\Nililand\Downloads\yplan00a.tex
+TeX:UNIX
+1159163 0 -1 0 -1 0 160 160 1856 622 0 1 49 0 -1 -1 0 0 15 -1 -1 15 1 0 0 -1  0 -1 0
+D:\texlive\2017\texmf-dist\tex\latex\gfsdidot\gfsdidot.sty
+TeX:STY:UNIX
+1159154 0 0 1 0 1 960 0 1920 686 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\chessfss\lsb1enc.def
+TeX:STY:UNIX
+1159154 0 0 1 0 1 960 0 1920 686 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\37-noboundary-PU.tex
+TeX:DE:UTF-8:Main
+17838075 1 -1 225 -1 377 960 0 1920 686 0 1 889 299 -1 -1 0 0 29 -1 -1 29 1 0 377 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\psdextra.def
+TeX:STY
+1060850 0 0 1 0 1 960 0 1920 686 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\hpdftex.def
+TeX:STY
+1060850 1 1149 1 1175 2 960 0 1920 686 0 0 41 713 -1 -1 0 0 3 0 0 3 1 0 2 1175  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\pd1enc.def
+TeX:STY
+1060850 2 96 22 96 30 960 0 1920 686 0 0 377 322 -1 -1 0 0 3 0 0 3 1 0 30 96  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\hyperref.sty
+TeX:STY
+1060850 1 5832 1 5874 2 960 0 1920 686 0 0 41 621 -1 -1 0 0 3 0 0 3 1 0 2 5874  0 0 0
+:\Ulle-Doku\Briefe\brief2017.tex
+TeX:DE:UTF-8:Main
+17838075 0 -1 1460 -1 1161 960 0 1920 686 0 1 337 345 -1 -1 0 0 29 -1 -1 29 1 0 1161 -1  0 -1 0
+:\Ulle-Doku\Infotexte\AdressenKlenner.tex
+TeX:DE:UTF-8:Main
+17838075 0 -1 1003 -1 1672 960 0 1920 686 0 1 97 621 -1 -1 0 0 29 -1 -1 29 1 0 1672 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\hyperref\hyperref.dtx
+TeX:DTX
+1060858 0 9094 24 9089 1 960 0 1920 686 0 1 49 230 -1 -1 0 0 11 0 0 11 1 0 1 9089  0 -1 0
+G:\Z-Test\first.mst
+DATA
+5243122 0 0 1 0 1 64 64 1760 526 1 0 101 0 -1 -1 0 0 13 0 0 13 1 0 1 0  0 0 0
+G:\Z-Test\first.ind
+TeX:AUX:UNIX
+1159154 0 0 1 0 1 32 32 1728 494 0 0 29 0 -1 -1 0 0 17 0 0 17 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\siunitx\siunitx.sty
+TeX:STY:UNIX
+1159154 2 628 16 628 32 0 0 1696 488 0 0 401 322 -1 -1 0 0 3 0 0 3 1 0 32 628  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\adforn\adforn.sty
+TeX:STY:UNIX
+1159154 1 2 1 4 1 960 0 1920 686 0 0 29 92 -1 -1 0 0 25 0 0 25 1 0 1 4  0 0 0
+D:\texlive\2017\texmf-dist\tex\latex\psnfss\pifont.sty
+TeX:STY:UNIX
+1159154 1 26 24 27 40 960 0 1920 686 0 0 497 368 -1 -1 0 0 3 0 0 3 1 0 40 27  0 0 0
+G:\Z-Test\test-utf8.pdf
+DATA
+5308658 0 115 49 2 52 960 0 1920 686 1 0 713 46 -1 -1 0 0 275 0 0 275 1 0 52 2  0 0 0
+G:\Z-Test\fail.log
+DATA
+5243122 7 259 19 259 2 0 0 960 686 1 0 125 529 -1 -1 0 0 121 0 0 121 1 0 2 259  0 0 0
+G:\Z-Test\work.log
+DATA
+5243122 7 276 38 276 2 960 0 1920 686 1 0 113 460 -1 -1 0 0 121 0 0 121 1 0 2 276  0 0 0
+D:\MiKTeX2.9\tex\latex\base\t1enc.def
+TeX:STY:UNIX
+1159154 2 117 21 117 27 960 0 1920 686 0 0 341 322 -1 -1 0 0 3 0 0 3 1 0 27 117  0 0 0
+D:\MiKTeX2.9\tex\latex\base\omlenc.def
+TeX:STY:UNIX
+1159154 1 47 30 47 1 960 0 1920 686 0 0 29 368 -1 -1 0 0 3 0 0 3 1 0 1 47  0 0 0
+D:\MiKTeX2.9\tex\latex\base\ot1enc.def
+TeX:STY:UNIX
+1159154 0 0 1 0 1 960 0 1920 686 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+G:\Z-Test\nospace.log
+DATA:UNIX
+5341426 0 0 1 0 1 960 0 1920 686 1 0 101 0 -1 -1 0 0 126 0 0 126 1 0 1 0  0 0 0
+G:\Z-Test\space.log
+DATA:UNIX
+5341426 0 0 1 0 1 960 0 1920 686 1 0 101 0 -1 -1 0 0 126 0 0 126 1 0 1 0  0 0 0
+D:\texlive\2017\texmf-dist\tex\generic\babel\switch.def
+TeX:STY:UNIX
+1159154 2 161 31 161 43 960 0 1920 686 0 0 533 345 -1 -1 0 0 3 0 0 3 1 0 43 161  0 0 0
+D:\texlive\2017\texmf-dist\tex\generic\babel\babel.def
+TeX:STY:UNIX
+1159154 1 520 61 520 42 960 0 1920 686 0 0 521 322 -1 -1 0 0 3 0 0 3 1 0 42 520  0 0 0
+D:\texlive\2017\texmf-dist\tex\luatex\luatexja\luatexja.sty
+TeX:STY:UNIX
+1159154 0 6 10 6 10 960 0 1920 686 0 0 137 138 -1 -1 0 0 2 0 0 2 1 0 10 6  0 0 0
+G:\Z-Test\test-utf8_Daten.fdf
+DATA
+273744114 0 0 1 0 1 960 0 1920 686 1 0 101 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\hluatex.def
+TeX:STY
+269496306 1 151 25 151 6 128 128 1824 617 0 0 89 -43220 -1 -1 0 0 3 0 0 3 1 0 6 151  0 0 0
+:\Ulle-Doku\Infotexte\AdressenPost_Solf.tex
+TeX
+269496315 0 -1 0 -1 0 224 224 1920 738 0 1 49 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+D:\texlive\2012\texmf-dist\tex\latex\hyperref\puarenc.def
+TeX:STY:UNIX
+269594610 0 0 1 0 1 64 64 1760 578 0 0 29 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\install-hyperref.sh
+DATA
+5243122 0 10 1 0 3 64 64 1792 532 1 0 125 0 -1 -1 0 0 38 0 0 38 1 0 3 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\install-hyperref.bat
+Application
+1049586 0 18 1 17 30 64 64 1792 532 0 0 377 391 -1 -1 0 0 40 0 0 40 1 0 30 17  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\hyperref\hyperref.ins
+TeX:INS
+1060858 0 0 1 0 1 32 32 1728 521 0 0 29 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\38-pdfminorversion.tex
+TeX:DE:UTF-8:Main
+17838075 0 -1 183 -1 80 224 224 1920 713 0 1 49 69 -1 -1 0 0 29 -1 -1 29 1 0 80 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\40-pdftex-highlight.tex
+TeX:DE:UTF-8:Main
+17838075 0 -1 83 -1 97 224 224 1920 713 0 1 181 69 -1 -1 0 0 29 -1 -1 29 1 0 97 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\40-dvips-highlight.log
+DATA:UNIX
+38895858 2 139 11 139 16 128 128 1824 617 1 0 281 322 -1 -1 0 0 124 0 0 124 1 0 16 139  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\40-pdftex-highlight.log
+DATA
+38797554 2 120 50 120 55 96 96 1792 585 1 0 749 322 -1 -1 0 0 96 0 0 96 1 0 55 120  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\hyperref\hluatex.dtx
+TeX:DTX
+1060858 0 771 1 771 9 64 64 1760 553 0 1 145 391 -1 -1 0 0 11 0 0 11 1 0 9 771  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\hdvipdfm.def
+TeX:STY:UNIX
+1159154 2 502 40 502 47 64 64 1760 553 0 0 581 322 -1 -1 0 0 3 0 0 3 1 0 47 502  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\hxetex.def
+TeX:STY:UNIX
+1159154 1 1153 25 1153 11 192 192 1888 681 0 0 149 506 -1 -1 0 0 3 0 0 3 1 0 11 1153  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\25-xetex-non-ascii.tex
+TeX:DE:UTF-8:Main
+420491259 0 -1 31 -1 31 224 224 1920 713 0 1 49 23 -1 -1 0 0 -1 -1 -1 -1 1 0 31 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\40-xetex-highlight.tex
+TeX:DE:UTF-8:Main
+420491259 0 -1 77 -1 68 224 224 1920 713 0 1 193 46 -1 -1 0 0 -1 -1 -1 -1 1 0 68 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\40-dvipdfmx-highlight.tex
+TeX:DE:UTF-8:Main
+420491259 0 -1 118 -1 118 224 224 1920 713 0 1 49 92 -1 -1 0 0 -1 -1 -1 -1 1 0 118 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\testfiles\40-dvips-highlight.tex
+TeX:DE:UTF-8:Main
+420491259 0 -1 68 -1 148 224 224 1920 713 0 1 517 92 -1 -1 0 0 -1 -1 -1 -1 1 0 148 -1  0 -1 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\hdvips.def
+TeX:STY
+269496306 1 40 1 40 7 96 96 1792 585 0 0 101 161 -1 -1 0 0 -1 -1 -1 -1 1 0 7 40  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\test-hyperref\tex\latex\hyperref\pdfmark.def
+TeX:STY
+269496306 2 832 22 832 35 160 160 1856 649 0 0 437 322 -1 -1 0 0 -1 -1 -1 -1 1 0 35 832  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\hyperref.ins
+TeX:INS
+1060858 0 0 1 0 1 128 128 1856 596 0 0 29 -1686 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\backref.drv
+TeX:INS:UNIX
+1159162 0 0 1 0 1 192 192 1920 660 0 0 29 -789 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+C:\Users\Nililand\HiDrive\tex-packages\ho-tex-hyperref\hycheck.tex
+TeX
+1060859 0 -1 0 -1 2247 96 96 1824 564 0 1 133 989 -1 -1 0 0 -1 -1 -1 -1 1 0 2247 -1  0 -1 0
+
+*:\Beratung\20130302-Tamegger\Arbeit\Quadratische_Gleichungen.tex
