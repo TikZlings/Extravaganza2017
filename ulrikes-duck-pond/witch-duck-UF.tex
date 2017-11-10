@@ -1,7 +1,7 @@
 % !Mode:: "TeX:UTF-8:Main"
 % arara: pdflatex
-% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 1, format: gif}
-% arara: showfile: {format: gif}
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 20 -loop 1, format: gif}
+% xarara: showfile: {format: gif}
 \documentclass{article}
 \usepackage[utf8]{inputenc} %probably not needed ...
 \usepackage[T1]{fontenc}
@@ -17,13 +17,21 @@
 \usepackage{xfp}
 \tikzstyle{witchstars}=[star, star points=5, star point ratio=2.25, draw,inner sep=1.3pt,anchor=outer point 3]
 
+\makeatletter
+
 \newcommand{\mystar}{%
     \pgfmathsetmacro\xposition{12.4*rnd}
     \pgfmathsetmacro\yposition{2.6*rnd+6.5}
     \pgfmathsetmacro\starsize{1.8+1.5*rnd}
     \pgfmathsetmacro\starcolor{random(10,75)}
+    \ifodd\c@page
     \node[witchstars,fill=yellow!\starcolor!white,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    \else
+    \node[witchstars,fill=white!\starcolor!yellow,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    \fi
     }
+\makeatother
+
 
 \begin{document}
 \AddToShipoutPictureBG{%
@@ -34,16 +42,14 @@
  \foreach \x in {1,2,...,50}{\mystar}
  \end{tikzpicture}}}
 
-%\begin{tikzpicture}
-%\path (0,0) rectangle (\textwidth,\textheight);
-%\pgfmathsetseed{2}
-%\foreach \x in {1,2,...,50}{\mystar}
-%\end{tikzpicture}
+\newcommand\loopmax{30}
 
-\foreach \x in {1,2,...,100}{
+\foreach \x in {1,2,...,\loopmax}{%
 \begin{tikzpicture}
 \path (0,0) rectangle (\textwidth,\textheight);
-\begin{scope}[overlay,xshift=\fpeval{0.67-\x*(0.67/100)}\textwidth,yshift=\fpeval{sin(\x/100)}cm ]
+\begin{scope}[overlay,
+              xshift=\fpeval{0.67-\x*(0.67/\loopmax)}\textwidth,
+              yshift=\fpeval{sin(\x/\loopmax*2*pi)+0.5}cm ]
 \begin{scope}[scale=2]
 \duck[witch=black!50!gray,
 longhair=red!80!black,
@@ -51,11 +57,32 @@ jacket=black!50!gray,
 magicwand]
 \end{scope}
 \end{scope}
-\end{tikzpicture}}
-
+\end{tikzpicture}\newpage}
 
 
 \end{document}
+
+
+% funktioniert nicht richtig. Javascriptfehler
+\begin{animateinline}[loop,autoplay]{30}
+\multiframe{\loopmax}{i=1+1}
+{%
+\begin{tikzpicture}
+\path (0,0) rectangle (\textwidth,\textheight);
+\begin{scope}[overlay,xshift=\fpeval{0.67-\i*(0.67/\loopmax)}\textwidth,yshift=\fpeval{sin(\i/\loopmax*2*pi)+0.5}cm ]
+\begin{scope}[scale=2]
+\duck[witch=black!50!gray,
+longhair=red!80!black,
+jacket=black!50!gray,
+magicwand]
+\end{scope}
+\end{scope}
+\end{tikzpicture}%
+}
+\end{animateinline}
+
+
+
 
 \begin{animateinline}[loop,autoplay]{10}
 \multiframe{130}{dright=0cm+0.4mm}{%
