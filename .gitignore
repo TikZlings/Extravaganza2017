@@ -35,4 +35,5 @@
 *.snm
 *.nav
 !storyboard/*
-
+*.prj
+*.prj.bak
