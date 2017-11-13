@@ -59,6 +59,21 @@ magicwand]
 \end{scope}
 \end{tikzpicture}\newpage}
 
+\foreach \x in {1,2,...,\loopmax}{%
+\begin{tikzpicture}[xscale=-1]
+\path (0,0) rectangle (\textwidth,\textheight);
+\begin{scope}[overlay,
+              xshift=\fpeval{0.67-\x*(0.67/\loopmax)}\textwidth,
+              yshift=\fpeval{sin(\x/\loopmax*2*pi)+0.5}cm ]
+\begin{scope}[scale=2]
+\duck[witch=black!50!gray,
+longhair=red!80!black,
+jacket=black!50!gray,
+magicwand]
+\end{scope}
+\end{scope}
+\end{tikzpicture}\newpage}
+
 
 \end{document}
 
