@@ -1,22 +1,25 @@
 % arara: pdflatex
-% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 1, format: gif}
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 20 -loop 1, format: gif}
 % arara: showfile: {format: gif}
-\documentclass{beamer}
-
-\usetheme{Madrid}
-
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[x11names]{xcolor}
 \usepackage{tikzducks}
 \usetikzlibrary{positioning}
+\pagestyle{empty}
+\parindent=0pt
+\usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{xfp}
+
 \newcommand{\ducky}[3]{\begin{scope}[shift={(#1,#2)}, scale=.3]
 		\duck[body=#3]
-\end{scope}}
+	\end{scope}}
 
-\begin{document}
-\begin{frame}
-\frametitle{Christmas Ducks 1}
-	\centering
-	\begin{tikzpicture}
-	\filldraw[brown] (-.5,0) rectangle (.5,1); 
+\newcommand{\tree}{	\filldraw[brown] (-.5,-.5) rectangle ++(1,1.5); 
 	\filldraw[green] (0,1) 
 	to[bend right] ++(4,0)
 	to[bend left] ++(-3,2)
@@ -34,90 +37,65 @@
 	to[bend right] ++(1.5,2)
 	-- cycle;
 	\begin{scope}[shift={(-.6,6.4)}, scale=.6]
-	\duck
+		\duck
 	\end{scope}
+}
+
+\tikzset{%
+	pics/snowflake/.style = {code={\node[circle, fill=white, inner sep = 1.5pt] {};}},
+	snowflaked/.style     = {path picture={
+			\pgfnodealias{@}{path picture bounding box}
+			\foreach \i [evaluate={\x=rnd; \y=rnd}] in {0,...,100}
+			\path ($(@.west)!\x!(@.east)$) coordinate (@1)
+			($(@.south)!\y!(@.north)$) coordinate (@2)
+			(@1 |- @2) pic {snowflake};
+}}}
+
+
+\begin{document}
+	\AddToShipoutPictureBG{%
+		\AtPageLowerLeft{%
+			\begin{tikzpicture}[overlay,remember picture]
+			\fill[DeepSkyBlue3, snowflaked] (0,1.5) rectangle (\paperwidth,\paperheight);
+			\end{tikzpicture}}}
+	\centering
+	\begin{tikzpicture}
+	\tree
 	\ducky{-1.75}{4.4}{red}
 	\ducky{1.15}{4.4}{blue}
 	\ducky{-3.25}{2.4}{brown}
 	\ducky{2.65}{2.4}{orange}
-	\ducky{-4.2}{.4}{cyan}
-	\ducky{3.6}{.4}{blue}
-	\ducky{-.3}{5}{white}
-	\ducky{-1.3}{3}{pink}
-	\ducky{.7}{3}{cyan}
-	\ducky{-.3}{1}{yellow}
+	\ducky{-4.2}{.4}{white}
+	\ducky{3.6}{.4}{pink}
+	\ducky{-.3}{5}{HotPink1}
+	\ducky{-1.3}{3}{Gold1}
+	\ducky{.7}{3}{Green4}
+	\ducky{-.3}{1}{LightBlue1}
 	\end{tikzpicture}
-\end{frame}
-\begin{frame}
-	\frametitle{Christmas Ducks 2}
-	\centering
 	\begin{tikzpicture}
-	\filldraw[brown] (-.5,0) rectangle (.5,1); 
-	\filldraw[green] (0,1) 
-	to[bend right] ++(4,0)
-	to[bend left] ++(-3,2)
-	to[bend right] ++(2,0)
-	to[bend left] ++(-2.5,2)
-	to[bend right] ++(1,0)
-	to[bend left] ++(-1.5,2)
-	-- cycle;
-	\filldraw[green] (0,1) 
-	to[bend left] ++(-4,0)
-	to[bend right] ++(3,2)
-	to[bend left] ++(-2,0)
-	to[bend right] ++(2.5,2)
-	to[bend left] ++(-1,0)
-	to[bend right] ++(1.5,2)
-	-- cycle;
-	\begin{scope}[shift={(-.6,6.4)}, scale=.6]
-	\duck
-	\end{scope}
-	\ducky{-1.75}{4.4}{cyan}
-	\ducky{1.15}{4.4}{red}
-	\ducky{-3.25}{2.4}{blue}
-	\ducky{2.65}{2.4}{brown}
-	\ducky{-4.2}{.4}{orange}
-	\ducky{3.6}{.4}{blue}
-	\ducky{-.3}{5}{pink}
-	\ducky{-1.3}{3}{white}
-	\ducky{.7}{3}{yellow}
-	\ducky{-.3}{1}{cyan}
+	\tree
+	\ducky{-1.75}{4.4}{white}
+	\ducky{1.15}{4.4}{pink}
+	\ducky{-3.25}{2.4}{HotPink1}
+	\ducky{2.65}{2.4}{Gold1}
+	\ducky{-4.2}{.4}{Green4}
+	\ducky{3.6}{.4}{LightBlue1}
+	\ducky{-.3}{5}{red}
+	\ducky{-1.3}{3}{blue}
+	\ducky{.7}{3}{brown}
+	\ducky{-.3}{1}{orange}
 	\end{tikzpicture}
-\end{frame}	
-\begin{frame}
-	\frametitle{Christmas Ducks 3}
-	\centering
 	\begin{tikzpicture}
-	\filldraw[brown] (-.5,0) rectangle (.5,1); 
-	\filldraw[green] (0,1) 
-	to[bend right] ++(4,0)
-	to[bend left] ++(-3,2)
-	to[bend right] ++(2,0)
-	to[bend left] ++(-2.5,2)
-	to[bend right] ++(1,0)
-	to[bend left] ++(-1.5,2)
-	-- cycle;
-	\filldraw[green] (0,1) 
-	to[bend left] ++(-4,0)
-	to[bend right] ++(3,2)
-	to[bend left] ++(-2,0)
-	to[bend right] ++(2.5,2)
-	to[bend left] ++(-1,0)
-	to[bend right] ++(1.5,2)
-	-- cycle;
-	\begin{scope}[shift={(-.6,6.4)}, scale=.6]
-	\duck
-	\end{scope}
-	\ducky{-1.75}{4.4}{brown}
-	\ducky{1.15}{4.4}{orange}
-	\ducky{-3.25}{2.4}{cyan}
-	\ducky{2.65}{2.4}{blue}
-	\ducky{-4.2}{.4}{blue}
-	\ducky{3.6}{.4}{red}
-	\ducky{-.3}{5}{cyan}
-	\ducky{-1.3}{3}{yellow}
-	\ducky{.7}{3}{white}
-	\ducky{-.3}{1}{pink}
+	\tree
+	\ducky{-1.75}{4.4}{blue}
+	\ducky{1.15}{4.4}{brown}
+	\ducky{-3.25}{2.4}{orange}
+	\ducky{2.65}{2.4}{white}
+	\ducky{-4.2}{.4}{pink}
+	\ducky{3.6}{.4}{HotPink1}
+	\ducky{-.3}{5}{Gold1}
+	\ducky{-1.3}{3}{Green4}
+	\ducky{.7}{3}{LightBlue1}
+	\ducky{-.3}{1}{red}
 	\end{tikzpicture}
-\end{frame}	
 \end{document}
