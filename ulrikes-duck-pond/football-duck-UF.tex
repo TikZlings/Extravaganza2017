@@ -1,0 +1,55 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 20 -loop 1, format: gif}
+% xarara: showfile: {format: gif}
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[x11names,svgnames]{xcolor}
+\usepackage{tikzducks}
+\usetikzlibrary{shapes.geometric}
+\pagestyle{empty}
+\parindent=0pt
+\usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{xfp}
+\definecolor{mggreen}{RGB}{37,166,89}
+
+
+\begin{document}
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \fill[LawnGreen] (0,0) rectangle (\paperwidth,\paperheight);
+ \coordinate(torlarge) at (0.5\paperwidth,\paperheight-\fpeval{16.5/64}\paperwidth);
+ \coordinate(torlargewest) at (0.5\paperwidth-\fpeval{6/64}\paperwidth,\paperheight-\fpeval{16.5/64}\paperwidth);
+ \coordinate(torlargeeast) at (0.5\paperwidth+\fpeval{6/64}\paperwidth,\paperheight-\fpeval{16.5/64}\paperwidth);
+  \draw[line width=2pt,white] (\fpeval{11.84/64}\paperwidth,\paperheight)--++(0,-\fpeval{16.5/64}\paperwidth)
+  --++(\fpeval{40/64}\paperwidth,0)--++ (0,\fpeval{16.5/64}\paperwidth);
+ \draw[line width=2pt,white]  (torlargewest) to[out=-80,in=-100] (torlargeeast);
+  \draw[line width=2pt,white] (\fpeval{(11.84+11.5)/64}\paperwidth,\paperheight)--++(0,-\fpeval{5.5/64}\paperwidth)
+  --++(\fpeval{18.32/64}\paperwidth,0)--++ (0,\fpeval{5.5/64}\paperwidth);
+ %\pgfmathsetseed{2}
+% \foreach \x in {1,2,...,50}{\mystar}
+ \draw[line width=2pt,white] (0.5\paperwidth,0) circle (2);
+ \end{tikzpicture}}}
+
+\begin{tikzpicture}
+\path (0,0) rectangle (\textwidth,\textheight);
+
+\begin{scope}%[xshift=,yshift=]
+\begin{scope}
+\duck[tshirt=mggreen,stripes={\stripes},football]
+\end{scope}
+
+\begin{scope}[xshift=3cm]
+\duck[tshirt=pink!80!black,]
+\end{scope}
+
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}
