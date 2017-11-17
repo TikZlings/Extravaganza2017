@@ -36,20 +36,77 @@
  \draw[line width=2pt,white] (0.5\paperwidth,0) circle (2);
  \end{tikzpicture}}}
 
-\begin{tikzpicture}
+\begin{tikzpicture}[]
 \path (0,0) rectangle (\textwidth,\textheight);
 
-\begin{scope}%[xshift=,yshift=]
-\begin{scope}
-\duck[tshirt=mggreen,stripes={\stripes},football]
-\end{scope}
-
-\begin{scope}[xshift=3cm]
+\begin{scope}[xshift=0.4\paperwidth,yshift=0.7\paperheight,overlay]
 \duck[tshirt=pink!80!black,cap=mggreen]
-\end{scope}
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
+
+\begin{scope}[xshift=0.5cm,yshift=0.5\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+\begin{scope}[xshift=3.5cm,yshift=0.5\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+\end{scope}
+
+\begin{scope}[xshift=6.5cm,yshift=0.5\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+\end{scope}
+\begin{scope}[xshift=9.5cm,yshift=0.5\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+\begin{scope}[xshift=3.5cm,yshift=0.33\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+\begin{scope}[xshift=6.5cm,yshift=0.33\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+\begin{scope}[xshift=2cm,yshift=0.15\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+\begin{scope}[xshift=5cm,yshift=0.15\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+\begin{scope}[xshift=8cm,yshift=0.15\paperheight]
+\duck[tshirt=mggreen,stripes={\stripes}]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+\end{scope}
+
+
+
+
+
+\begin{scope}[xshift=5cm,yshift=-0.04\paperheight,overlay]
+\duck[tshirt=mggreen,stripes={\stripes},football]
+\node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+
+\end{scope}
+
+%\node[overlay]{\includegraphics[width=1cm]{Borussia_Moenchengladbach_logo}};
 
 \end{tikzpicture}
 
-\end{document}
+\end{document} 
