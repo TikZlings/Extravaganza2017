@@ -1,23 +1,28 @@
 % arara: pdflatex
 % arara: convert: {density: 160, otheroptions: -dispose previous -delay 25 -loop 1, format: gif}
-% xarara: showfile: {format: gif}
-\documentclass{beamer}
-\setbeamertemplate{navigation symbols}{}
-\usepackage{tikzducks}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{positioning,shapes.callouts}
+% arara: showfile: {format: gif}
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage{eso-pic}
+\usepackage{tikzducks} 
+\usetikzlibrary{arrows.meta,positioning, shapes.callouts, decorations.pathmorphing}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.fillbetween, intersections}
 
 \newcommand{\devilduck}{%
 \begin{scope}
-\clip (0,0) -- ++(2.2,0) -- ++(0,2.6) -- ++(-2.2,0) -- cycle;
+\path (-2,0) -- ++(5,0) -- ++(0,5.5) -- ++(-5,0) -- cycle;
 \duck[body=red, grumpy, bill=black, name=devil]
-\filldraw[black] ([xshift=2pt]devil-head) to[bend right] +(6pt,6pt) to[bend left] +(-4pt,-8pt) to[bend left] cycle;
-\filldraw[black] ([xshift=-2pt, yshift=1pt]devil-head) to[bend left] +(-6pt,6pt) to[bend right] +(4pt,-8pt) to[bend right] cycle;
+\filldraw[black] ([xshift=2pt]devil-head) to[bend right] +(6pt,6pt) to[bend left] +(-4pt,-8pt) to[bend left] cycle; 
+\filldraw[black] ([xshift=-2pt, yshift=1pt]devil-head) to[bend left] +(-6pt,6pt) to[bend right] +(4pt,-8pt) to[bend right] cycle; 
 \end{scope}%
 }
 \newcommand{\normalduck}{%
 \begin{scope}[xshift=-11em]
-\clip (0,0) -- ++(2.2,0) -- ++(0,2.6) -- ++(-2.2,0) -- cycle;
+\path (-1,0) -- ++(4.2,0) -- ++(0,5.5) -- ++(-4.2,0) -- cycle;
 \duck[name=duck]	
 \end{scope}%
 }
@@ -28,34 +33,38 @@
 }
 
 \begin{document}
-\begin{frame}
-	\frametitle{Devil Ducks}
-	\centering
-	\begin{tikzpicture}	
+\AddToShipoutPictureBG{%
+\AtPageLowerLeft{%
+	\begin{tikzpicture}[overlay,remember picture]
+		\draw[red, very thick, name path=myborder] (0,0) rectangle (\paperwidth,\paperheight);
+		\path[decorate, name path=myzigzag,
+			decoration={zigzag,
+				amplitude=.7cm,
+				segment length=1.7cm
+				}
+			] 
+			(1,1) rectangle (.92\paperwidth,.9\paperheight);
+		\tikzfillbetween[of=myborder and myzigzag] {red};
+		\end{tikzpicture}}}
+\centering
+\begin{tikzpicture}	
 	\devilduck
 	\normalduck
 	\fork{1em}
-	\end{tikzpicture}	
-\end{frame}
-\begin{frame}
-\frametitle{Devil Ducks}
-\centering
-\begin{tikzpicture}
+\end{tikzpicture}	
+\newpage
+\begin{tikzpicture}	
+	\devilduck
+	\normalduck
+	\fork{.5em}
+\end{tikzpicture}	
+\newpage
+\begin{tikzpicture}[remember picture]
 	\devilduck
 	\normalduck
 	\fork{0em}
 \end{tikzpicture}
-\end{frame}
-\begin{frame}
-\frametitle{Devil Ducks}
-\centering
-\begin{tikzpicture}[remember picture]
-\devilduck
-\normalduck
-\fork{-1em}
-\end{tikzpicture}
 \begin{tikzpicture}[remember picture, overlay]
-\node[ellipse callout, draw=blue, text=red] at ([shift={(-1,1)}]duck-head) {Ouch!};
+\node[ellipse callout, draw=blue, text=red] at ([shift={(-1,1)}]duck-head) {\textbf{Ouch!}};
 \end{tikzpicture}
-\end{frame}
 \end{document}
