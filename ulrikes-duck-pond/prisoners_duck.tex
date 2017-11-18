@@ -1,0 +1,161 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% arara: convert: {density: 96, otheroptions: -dispose previous -delay 20 -loop 1, format: gif}
+
+%needs ticksducks.sty from github!
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[x11names,svgnames]{xcolor}
+\usepackage{tikzducks}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{patterns,decorations.pathmorphing}
+
+\pagestyle{empty}
+\parindent=0pt
+\usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{xfp}
+\definecolor{mggreen}{RGB}{37,166,89}
+
+
+\begin{document}
+\makeatletter
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \fill[Wheat2] (0,0) rectangle (\paperwidth,\paperheight) ;
+ \pgfmathsetmacro\tmpaamplitude{2+0.01*mod(\c@page,3)}%\show\tmpaamplitude
+ \fill[blue,decorate, decoration={snake,segment length={\tmpaamplitude cm}}]
+ (-2cm,\paperheight-1cm)
+ -- (0,\paperheight+1)
+ -- (\paperwidth+1cm,1)
+ -- (\paperwidth+1cm,-1) --cycle ;
+
+ \end{tikzpicture}}}
+
+\foreach\x in {1,2,...,10}{
+\begin{tikzpicture}[]
+\path[use as bounding box] (0,0) rectangle (\textwidth,\textheight);
+
+\node[scale=2.5] at (1,2) {\includegraphics{palmtree}\llap{\mbox{\includegraphics[trim=6mm 0mm 6mm 5.1mm,page=2,clip]{palmtree}\hspace*{6mm}}}};
+\node[scale=2.4] at (10,7.1) {\includegraphics{palmtree}\llap{\mbox{\includegraphics[trim=6mm 0mm 6mm 5.1mm,page=2,clip]{palmtree}\hspace*{6mm}}}};
+
+\begin{scope}[xshift=3cm,yshift=0.5cm,scale=0.6]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=4.7cm,yshift=0.3cm,scale=0.6]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=7.1cm,yshift=1.25cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=5.4cm,yshift=2.25cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=4.3cm,yshift=2.25cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=2.2cm,yshift=3.35cm,scale=0.6]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\begin{scope}[xshift=2cm,yshift=4.05cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\begin{scope}[xshift=8.6cm,yshift=0.25cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=8.8cm,yshift=0.15cm,scale=0.6]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\begin{scope}[xshift=2cm,yshift=0.1cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\begin{scope}[xshift=1cm,yshift=5cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\begin{scope}[xshift=3.8cm,yshift=7.5cm,scale=0.6,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=4cm,yshift=7cm,scale=0.58,]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=5.5cm,yshift=7.3cm,scale=0.61,]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=5.9cm,yshift=5.3cm,scale=0.6,]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=7.5cm,yshift=6.3cm,scale=0.605,]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\begin{scope}[xshift=8.7cm,yshift=4.5cm,scale=0.595,xscale=-1]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=8.9cm,yshift=5.2cm,scale=0.595]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=10.1cm,yshift=5.6cm,scale=0.6]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=10.5cm,yshift=3.5cm,scale=0.6,]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+\begin{scope}[xshift=8.9cm,yshift=4.2cm,scale=0.595]
+\duck[crazyhair=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray!60!black,grumpy,body=brown!80!AntiqueWhite1]
+\end{scope}
+
+
+\end{tikzpicture}\newpage}
+
+
+\end{document} 

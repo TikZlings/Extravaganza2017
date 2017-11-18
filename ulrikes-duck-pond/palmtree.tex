@@ -1,0 +1,28 @@
+% !Mode:: "TeX:UTF-8:Main"
+\RequirePackage{luatex85}
+\PassOptionsToPackage{svgnames,x11names}{xcolor}
+\documentclass[tikz]{standalone}
+\usepackage{fontspec}
+\setmainfont{Quivira}
+
+\begin{document}
+\fontsize{2cm}{2cm}\selectfont
+\begin{tikzpicture}
+\node[inner sep=0pt]{\textcolor{PaleGreen4}{\symbol{"1F334}}};
+\end{tikzpicture}
+\newpage
+\begin{tikzpicture}
+\node[inner sep=0pt]{\textcolor{Wheat4}{\symbol{"1F334}}};
+\end{tikzpicture}
+
+\end{document}
+
+
+\setmainfont{Segoe UI Emoji}
+
+
+\fontspec{Segoe UI Symbol}
+\symbol{"1F334}
+
+\fontspec{Symbola}
+\symbol{"1F334}
