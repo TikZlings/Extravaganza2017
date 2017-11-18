@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
-\usepackage[x11names,svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 \usepackage{tikzducks}
 \usetikzlibrary{shapes.geometric}
 \pagestyle{empty}
@@ -40,13 +40,13 @@
 \path (0,0) rectangle (\textwidth,\textheight);
 
 \begin{scope}[xshift=0.4\paperwidth,yshift=0.7\paperheight,overlay]
-\duck[tshirt=pink!80!black,cap=mggreen]
+\duck[tshirt=pink!80!black,cap=mggreen,body=DarkGoldenrod1!25!AntiqueWhite1]
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
 
 \begin{scope}[xshift=0.5cm,yshift=0.5\paperheight]
-\duck[tshirt=mggreen,stripes={\stripes}]
+\duck[tshirt=mggreen,stripes={\stripes},]
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
@@ -61,13 +61,13 @@
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 \end{scope}
 \begin{scope}[xshift=9.5cm,yshift=0.5\paperheight]
-\duck[tshirt=mggreen,stripes={\stripes}]
+\duck[tshirt=mggreen,stripes={\stripes},body=DarkGoldenrod1!20!AntiqueWhite1]
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
 
 \begin{scope}[xshift=3.5cm,yshift=0.33\paperheight]
-\duck[tshirt=mggreen,stripes={\stripes}]
+\duck[tshirt=mggreen,stripes={\stripes},body=RosyBrown4]
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
@@ -79,7 +79,7 @@
 \end{scope}
 
 \begin{scope}[xshift=2cm,yshift=0.15\paperheight]
-\duck[tshirt=mggreen,stripes={\stripes}]
+\duck[tshirt=mggreen,stripes={\stripes},body=DarkGoldenrod1!40!AntiqueWhite1]
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
@@ -100,7 +100,7 @@
 
 
 \begin{scope}[xshift=5cm,yshift=-0.04\paperheight,overlay]
-\duck[tshirt=mggreen,stripes={\stripes},football]
+\duck[tshirt=mggreen,stripes={\stripes},football,body=brown]
 \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
 
 \end{scope}
