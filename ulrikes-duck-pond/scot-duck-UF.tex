@@ -34,29 +34,29 @@
 \begin{scope}[xshift=\fpeval{1-\x*(1/\loopmax)}cm,yshift=0.1cm,scale=1.2]
 
 \duck[body=DarkGoldenrod1!20!AntiqueWhite1,beret]
-\begin{scope}
-\path[clip]
-\duckpathjacket;
+ 
+ \begin{scope}
+  \path[clip]
+  \duckpathjacket;
+  \node[anchor=south west] at (0,0){\includegraphics[width=3cm]{tartan3}};
+ \end{scope}
 
-\node[anchor=south west] at (0,0){\includegraphics[width=3cm]{tartan3}};
-\end{scope}
 \draw[thick] \duckpathjacket;
 
-\begin{scope}[rotate=-25]
-\draw[line width=1.5pt] (0.13,2.15) ellipse (0.5 and 0.17)
+ \begin{scope}[rotate=-25]
+  \draw[line width=1.5pt] (0.13,2.15) ellipse (0.5 and 0.17)
             (0.13,2.25) ellipse (0.55 and 0.17)
 	        (0.13,2.4) circle (0.08);
-\end{scope}
-
-
-\begin{scope}[rotate=-25]
-\path[clip] (0.13,2.15) ellipse (0.5 and 0.17)
+ \end{scope}
+ \begin{scope}[rotate=-25]
+  \path[clip] (0.13,2.15) ellipse (0.5 and 0.17)
             (0.13,2.25) ellipse (0.55 and 0.17)
 	        (0.13,2.4) circle (0.08);
-\node[anchor=south west] at (0,1){\includegraphics[width=3cm]{tartan3}};
-\end{scope}
+  \node[anchor=south west] at (0,1){\includegraphics[width=3cm]{tartan3}};
+ \end{scope}
 
-\node[anchor=south west] at (-0.1,-0.55) {\includegraphics[width=2.1cm]{bagpipes}};
+\node[anchor=south west] at (-0.1,-0.55) {\includegraphics[scale=0.25]{bagpipes}};
+
 \end{scope}
 
 % 2. duck
@@ -129,29 +129,29 @@
 \begin{scope}[xshift=\fpeval{1-\x*(1/\loopmax)}cm,yshift=0.1cm,scale=1.2]
 
 \duck[body=DarkGoldenrod1!20!AntiqueWhite1,beret]
-\begin{scope}
-\path[clip]
-\duckpathjacket;
+ \begin{scope}
+  \path[clip]\duckpathjacket;
+  \node[anchor=south west] at (0,0){\includegraphics[width=3cm]{tartan3}};
+ \end{scope}
+ \draw[thick] \duckpathjacket;
 
-\node[anchor=south west] at (0,0){\includegraphics[width=3cm]{tartan3}};
-\end{scope}
-\draw[thick] \duckpathjacket;
-
-\begin{scope}[rotate=-25]
-\draw[line width=1.5pt] (0.13,2.15) ellipse (0.5 and 0.17)
+ \begin{scope}[rotate=-25]
+  \draw[line width=1.5pt] (0.13,2.15) ellipse (0.5 and 0.17)
             (0.13,2.25) ellipse (0.55 and 0.17)
 	        (0.13,2.4) circle (0.08);
-\end{scope}
+ \end{scope}
 
-
-\begin{scope}[rotate=-25]
-\path[clip] (0.13,2.15) ellipse (0.5 and 0.17)
+ \begin{scope}[rotate=-25]
+  \path[clip] (0.13,2.15) ellipse (0.5 and 0.17)
             (0.13,2.25) ellipse (0.55 and 0.17)
 	        (0.13,2.4) circle (0.08);
-\node[anchor=south west] at (-1,1){\includegraphics[width=3cm]{tartan3}};
-\end{scope}
+  \node[anchor=south west] at (-1,1){\includegraphics[width=3cm]{tartan3}};
+ \end{scope}
 
-\node[anchor=south west] at (-0.2,-0.55) {\includegraphics[scale=0.2]{bagpipes}};
+\node[anchor=south west] at (-0.1,-0.55) {\includegraphics[scale=\fpeval{0.25/1.2}]{bagpipes}};
+
+
+%\node[anchor=south west] at (-0.2,-0.55) {\includegraphics[scale=0.2]{bagpipes}};
 \end{scope}
 
 % 2. duck
@@ -180,7 +180,8 @@
 \end{scope}
 
 
-\node[anchor=south west] at (-0.2,-0.55) {\includegraphics[scale=0.2]{bagpipes}};
+\node[anchor=south west] at (-0.1,-0.55) {\includegraphics[scale=\fpeval{0.25/1.2}]{bagpipes}};
+
 \end{scope}
 
 %3. duck
@@ -210,7 +211,8 @@
 \end{scope}
 
 
-\node[anchor=south west] at (-0.2,-0.55) {\includegraphics[scale=0.2]{bagpipes}};
+\node[anchor=south west] at (-0.1,-0.55) {\includegraphics[scale=\fpeval{0.25/1.2}]{bagpipes}};
+
 \end{scope}
 
 
