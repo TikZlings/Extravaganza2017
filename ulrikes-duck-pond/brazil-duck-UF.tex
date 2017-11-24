@@ -92,7 +92,7 @@
  \fill[brazilgreen] (current page.north west) rectangle ([yshift=-2cm]current page.north east);
  \node [font=\LARGE\sffamily\bfseries,fill=brazilgreen,text=brazilyellow, inner ysep=7pt, anchor=north] (A)  at (current page.north) {Ordem e Progresso};
  \node[inner sep=7pt,minimum width=\paperwidth,fill=brazilblue,font=\Large\sffamily\bfseries,text=brazilyellow, anchor=north] at (A.south) {\begin{tabular}{cc}
- Come to the %39th Annual 
+ Come to the %39th Annual
  Meeting of the TeX Users Group\\
  July 20--22, 2018 -- Rio de Janeiro, Brazil
  \end{tabular}
@@ -101,12 +101,10 @@
   \pgfmathsetmacro\tmpaamplitude{2+0.01*mod(\csname c@page\endcsname,3)}%\show\tmpaamplitude
  \fill[brazilblue,decorate, decoration={snake,segment length={\tmpaamplitude cm}}]
   (current page.south west) circle [x radius=4.5cm, y radius=7cm, rotate=10];;
-  
+
  \node[inner sep=0pt, anchor=south west] at (current page.south west){\includegraphics[trim=2cm 2cm 0cm 0cm,width=4cm]{tuglion}};
 
  \end{tikzpicture}
- %\includegraphics[trim=2cm 0.5cm 0cm 0cm,height=\paperheight]{scotland2-background}%
- %}
  }
 
 %2.3 min
@@ -129,7 +127,7 @@
 \end{tikzpicture}\newpage
 }
 
-%0.8max: together 
+%0.8max: together
 %0.1min:
 \foreach\x in {0,1,2,3,4}
 {%
