@@ -107,7 +107,7 @@ piratehat/.pic={
 \tikzset{swordblade/.style   ={picpirateswordblade/.style={fill=#1,draw=#1}}}
 
 \tikzset{ piratesword/.pic=
-{ 
+{
  \begin{scope}[y=0.80pt, x=0.80pt, yscale=-0.1000000, xscale=0.1000000, inner sep=0pt, outer sep=0pt]
   \begin{scope}[cm={{1.25,0.0,0.0,1.25,(-95.12185,-232.5044)}}]
    \path[picpirateswordhandle=swordcolordark,line width=0.075pt] (73.6300,68.7000) .. controls
@@ -177,6 +177,15 @@ piratehat/.pic={
 }
 }
 
+
+\tikzset{duckparrot/.pic={
+    \path(0,0)--++(1,0); 
+    \begin{scope}[scale=0.2,xshift=40,yshift=20,transform shape]  
+    \duck[body=yellow];
+    \draw (head) pic [rotate=-20] {piratehat};
+    \end{scope}			
+}
+}
 \begin{document}
 \AddToShipoutPictureBG{%
  \AtPageLowerLeft{%
@@ -188,10 +197,11 @@ piratehat/.pic={
 \path (0,0) rectangle (\textwidth,\textheight);
 
 \begin{scope}[xshift=1cm,yshift=4cm]
-\duck[tshirt=red,stripes={\stripes},body=DarkGoldenrod,shorthair=Maroon]
+{\duck[tshirt=red,stripes={\stripes},body=DarkGoldenrod,shorthair=Maroon]}
 \draw(head) pic [rotate=-20]{piratehat};
 \draw([xshift=0.8cm]wing) pic [swordhandle=SlateGray,swordblade=Silver,rotate=110] {piratesword};
 \pic{eyepatch};
+\draw (wing) pic{duckparrot};
 \end{scope}
 
 
@@ -212,7 +222,7 @@ piratehat/.pic={
 \end{tikzpicture}
 
 
-\end{document} 
+\end{document}
 
 xxx\fbox{\begin{tikzpicture}[]
 \draw(0,0) --++ (0,2);
