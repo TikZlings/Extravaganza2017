@@ -179,47 +179,216 @@ piratehat/.pic={
 
 
 \tikzset{duckparrot/.pic={
-    \path(0,0)--++(1,0); 
-    \begin{scope}[scale=0.2,xshift=40,yshift=20,transform shape]  
-    \duck[body=yellow];
-    \draw (head) pic [rotate=-20] {piratehat};
+    \path(0,0)--++(1,0);
+    \begin{scope}[scale=0.2,xshift=40,yshift=20,transform shape]
+    \duck[name=parrot]body=yellow];
+    \draw (parrot-head) pic [rotate=-20] {piratehat};
     \end{scope}			
 }
 }
+
+\tikzset{cross/.pic={
+     \begin{scope}[xshift=10.3cm,yshift=-7.2cm]
+     \begin{scope}[y=0.80pt, x=0.80pt, yscale=1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt,rotate=90]
+      \path[fill=white] (305.9800,336.9390) .. controls (303.5570,332.9030) and
+        (298.3170,331.5890) .. (294.2720,334.0210) -- (256.0000,356.9830) --
+        (217.7280,334.0200) .. controls (213.6750,331.5880) and (208.4440,332.9020) ..
+        (206.0200,336.9380) .. controls (203.5880,340.9830) and (204.9020,346.2220) ..
+        (208.9380,348.6460) -- (239.4190,366.9330) -- (208.9380,385.2200) .. controls
+        (204.9020,387.6430) and (203.5880,392.8830) .. (206.0200,396.9280) .. controls
+        (207.6160,399.5900) and (210.4400,401.0670) .. (213.3420,401.0670) .. controls
+        (214.8350,401.0670) and (216.3460,400.6740) .. (217.7280,399.8470) --
+        (256.0000,376.8830) -- (294.2720,399.8460) .. controls (295.6460,400.6740) and
+        (297.1650,401.0660) .. (298.6580,401.0660) .. controls (301.5590,401.0660) and
+        (304.3840,399.5900) .. (305.9800,396.9270) .. controls (308.4120,392.8820) and
+        (307.0980,387.6430) .. (303.0620,385.2190) -- (272.5810,366.9320) --
+        (303.0620,348.6450) .. controls (307.0980,346.2230) and (308.4120,340.9830) ..
+        (305.9800,336.9390) -- cycle;
+       \end{scope}
+      \end{scope}
+     }}
 \begin{document}
 \AddToShipoutPictureBG{%
  \AtPageLowerLeft{%
  \begin{tikzpicture}[overlay,remember picture]
- \fill[blue!50!white] (0,0) rectangle (\paperwidth,\paperheight);
+ \fill[PeachPuff2] (0,0) rectangle (\paperwidth,\paperheight);
  \end{tikzpicture}}}
 
+\foreach\x in {10,20,...,360}
+{
 \begin{tikzpicture}[]
-\path (0,0) rectangle (\textwidth,\textheight);
+\path[use as bounding box] (0,0) rectangle (\textwidth,\textheight);
 
-\begin{scope}[xshift=1cm,yshift=4cm]
-{\duck[tshirt=red,stripes={\stripes},body=DarkGoldenrod,shorthair=Maroon]}
-\draw(head) pic [rotate=-20]{piratehat};
-\draw([xshift=0.8cm]wing) pic [swordhandle=SlateGray,swordblade=Silver,rotate=110] {piratesword};
+\begin{scope}[xshift=1cm,yshift=0cm]
+\begin{scope}[xshift=1cm,yshift=2cm,xscale=-1,transform shape]
+{\duck[name=main,tshirt=red,stripes={\stripes},body=DarkGoldenrod,shorthair=Maroon]}
+\draw(main-head) pic [rotate=-20]{piratehat};
 \pic{eyepatch};
-\draw (wing) pic{duckparrot};
+\draw (main-wing) pic{duckparrot};
+\draw (main-wing) pic [swordhandle=SlateGray,swordblade=Silver,rotate=\x] {piratesword};
 \end{scope}
 
-
-\begin{scope}[xshift=4cm,yshift=4cm]
-\duck[tshirt=red,stripes={\stripes},longhair=red]
+\begin{scope}[xshift=8cm,yshift=6cm]
+\duck[tshirt=red,stripes={\stripes},longhair=red!50!Maroon,body=AntiqueWhite2!50!Goldenrod1]
 \draw(head) pic [rotate=-20]{piratehat};
-\draw(wing) pic [swordhandle=SlateGray,swordblade=Silver] {piratesword};
 \pic{eyepatch};
+\draw(wing) pic [swordhandle=SlateGray,swordblade=Silver,rotate=\x+30] {piratesword};
 \end{scope}
 
-\begin{scope}[xshift=7cm,yshift=4cm,scale=0.6,transform shape]
+\begin{scope}[xshift=7.2cm,yshift=3.6cm,scale=0.6,transform shape]
 \duck[tshirt=red,stripes={\stripes},shorthair=brown]
 \draw(head) pic [rotate=-20]{piratehat};
-\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver] {piratesword};
 \pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+70] {piratesword};
 \end{scope}
 
-\end{tikzpicture}
+
+
+\begin{scope}[xshift=7cm,yshift=2cm,scale=0.6,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+20] {piratesword};
+\end{scope}
+
+
+\begin{scope}[xshift=6.3cm,yshift=5.4cm,scale=0.6,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+110] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=5.8cm,yshift=7.3cm,scale=0.6,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+210] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=8cm,yshift=1.3cm,scale=0.6,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+80] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=9.6cm,yshift=3.3cm,scale=0.6,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+150] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=8.2cm,yshift=0cm,scale=0.6,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+270] {piratesword};
+\end{scope}
+
+
+
+\begin{scope}[xshift=3cm,yshift=0cm,scale=0.6,xscale=-1,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+145] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=1cm,yshift=5cm,scale=0.6,xscale=-1,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+55] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=2cm,yshift=7cm,scale=0.6,xscale=-1,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+100] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=3cm,yshift=6.5cm,scale=0.6,xscale=-1,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x] {piratesword};
+\end{scope}
+
+\begin{scope}[xshift=3.2cm,yshift=4.5cm,scale=0.6,xscale=-1,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+130] {piratesword};
+\end{scope}
+
+
+\begin{scope}[xshift=2.5cm,yshift=2.5cm,scale=0.6,xscale=-1,transform shape]
+\duck[tshirt=red,stripes={\stripes},shorthair=brown]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw(wing) pic[swordhandle=SlateGray,swordblade=Silver,rotate=\x+170] {piratesword};
+\end{scope}
+
+
+\fill[Burlywood4] (4,0) --++ (-0.5,5) --++ (0.5,2) --++ (2,0)--++ (0.5,-2) --++(-0.5,-5) --cycle;
+\coordinate (crosscenter) at (5,5.5);
+
+\begin{scope}[scale=0.5]
+\draw[line width=3mm,white] ([yshift=-3cm]crosscenter)--++(0,3.8)
+                            ([xshift=-0.8cm]crosscenter)--++(1.6,0);
+\end{scope}
+
+\begin{scope}[yshift=8.88cm,xshift=4.1cm]
+ \begin{scope}[y=0.80pt, x=0.80pt, yscale=-0.1300000, xscale=0.1300000, inner sep=0pt, outer sep=0pt,transform shape
+    ]% g16
+      \path[draw=brown,fill=black] (378.8290,196.9580) -- (319.5480,171.5630) .. controls (308.1470,165.8710)
+        and (307.2000,155.3500) .. (307.2000,145.0670) -- (307.2000,102.4000) ..
+        controls (316.6040,102.4000) and (324.2670,94.7460) .. (324.2670,85.3330) --
+        (324.2670,51.2000) .. controls (324.2670,41.7880) and (316.6040,34.1330) ..
+        (307.2000,34.1330) -- (290.1330,34.1330) -- (290.1330,8.5330) .. controls
+        (290.1330,3.8230) and (286.3190,0.0000) .. (281.6000,0.0000) --
+        (230.4000,0.0000) .. controls (225.6810,0.0000) and (221.8670,3.8230) ..
+        (221.8670,8.5330) -- (221.8670,34.1330) -- (204.8000,34.1330) .. controls
+        (195.3880,34.1330) and (187.7330,41.7870) .. (187.7330,51.2000) --
+        (187.7330,85.3330) .. controls (187.7330,94.7450) and (195.3870,102.4000) ..
+        (204.8000,102.4000) -- (204.8000,145.0670) .. controls (204.8000,155.3500) and
+        (203.8530,165.8710) .. (192.9050,171.3580) -- (132.7190,197.1630) .. controls
+        (113.1690,206.9420) and (102.4000,224.8020) .. (102.4000,247.4670) --
+        (102.4000,469.3340) .. controls (102.4000,492.8600) and (121.5400,512.0010) ..
+        (145.0670,512.0010) -- (366.9340,512.0010) .. controls (390.4600,512.0010) and
+        (409.6010,492.8610) .. (409.6010,469.3340) -- (409.6010,247.4670) .. controls
+        (409.6000,224.8020) and (398.8310,206.9420) .. (378.8290,196.9580) --
+        cycle;
+
+        \path[fill=brown!60!black]
+        (238.9330,17.0670) -- (273.0660,17.0670) -- (273.0660,34.1340) --
+        (238.9330,34.1340) -- (238.9330,17.0670) -- cycle;
+
+        \path (175,367)pic{cross}--++ (80,0) pic {cross}--++(80,0) pic {cross};
+ \end{scope}
+ \end{scope}
+ \end{scope}
+\end{tikzpicture}\newpage}
+
+\end{document}
+%test rotate sword: ~220-300
+\newpage
+\raggedright
+\foreach\x in {10,20,...,360}
+{
+\begin{tikzpicture}
+\duck[tshirt=red,stripes={\stripes},longhair=red!50!Maroon,body=AntiqueWhite2!50!Goldenrod1]
+\draw(head) pic [rotate=-20]{piratehat};
+\pic{eyepatch};
+\draw[overlay](wing) pic [swordhandle=SlateGray,swordblade=Silver,rotate=\x] {piratesword};
+\path(0,0)--++(0,-0.5);
+\end{tikzpicture}\newpage
+}
+
+
 
 
 \end{document}
