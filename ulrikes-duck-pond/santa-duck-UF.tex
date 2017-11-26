@@ -1,0 +1,98 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% arara: convert: {density: 96, otheroptions: -dispose previous -delay 20 -loop 1, format: gif}
+% xarara: showfile: {format: gif}
+
+% music: https://www.youtube.com/watch?v=dG-62zBnKkQ
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[svgnames,x11names]{xcolor}
+\usepackage{tikzducks}
+\usetikzlibrary{shapes.geometric}
+\pagestyle{empty}
+\parindent=0pt
+\usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{xfp}
+\tikzstyle{witchstars}=[star, star points=5, star point ratio=2.25, draw,inner sep=1.3pt,anchor=outer point 3]
+
+\makeatletter
+\newcommand{\mystar}{%
+    \pgfmathsetmacro\xposition{12.4*rnd}
+    \pgfmathsetmacro\yposition{8.6*rnd+1}
+    \pgfmathsetmacro\starsize{1.8+1.5*rnd}
+    \pgfmathsetmacro\starcolor{random(10,75)}
+    \ifodd\c@page
+    \node[witchstars,fill=yellow!\starcolor!white,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    \else
+    \node[witchstars,fill=white!\starcolor!yellow,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    \fi
+    }
+
+\begin{document}
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \fill[DeepSkyBlue3!50!black] (0,0) rectangle (\paperwidth,\paperheight);
+ \pgfmathsetseed{9}
+ \foreach \x in {1,2,...,80}{\mystar}
+ \end{tikzpicture}}}
+\centering
+\mbox{}
+
+\medskip
+\begin{tikzpicture}
+
+\begin{scope}[scale=3,xscale=-1]
+\duck[santa=red!80!black, jacket=red!80!gray, tshirt=white,beard=white!80!brown,sunglasses=brown!30!black,body=LightGoldenrod2!70!RosyBrown1]
+\end{scope}
+
+\begin{scope}[xshift=1cm,yshift=8cm,y=0.80pt, x=0.80pt, yscale=-0.1500000, xscale=0.1500000, inner sep=0pt, outer sep=0pt]
+\begin{scope}[shift={(-2.00001,0.99998)},draw=Gold2,fill=LightGoldenrod1]% g3755
+  \begin{scope}[cm={{1.86061,3.64563,-4.29357,1.91719,(2433.2061,2666.3373)}},line join=round,line cap=butt,miter limit=4.00,even odd rule,line width=2.213pt]% g5648
+    % path3857
+    \path[draw,fill] (-694.8015,78.0448) .. controls (-703.9518,109.7970) and
+      (-708.9635,137.2005) .. (-707.9075,168.4403) .. controls (-708.4191,184.6025)
+      and (-704.5624,199.0734) .. (-697.3772,213.3798) .. controls
+      (-684.1169,238.6588) and (-666.0218,251.6286) .. (-666.0218,251.6286) ..
+      controls (-666.0218,251.6286) and (-659.1136,234.4630) .. (-659.1136,234.4630)
+      .. controls (-659.1136,234.4630) and (-682.7795,215.1067) ..
+      (-691.5190,184.1707) .. controls (-700.0409,154.0051) and (-694.8015,78.0448)
+      .. (-694.8015,78.0448) -- cycle;
+
+    % path5634
+    \path[draw,fill] (-694.9337,78.0572) .. controls (-708.2169,108.3143) and
+      (-716.8211,134.8102) .. (-719.9202,165.9139) .. controls (-722.5723,181.8652)
+      and (-720.6700,196.7199) .. (-715.4471,211.8533) .. controls
+      (-705.6588,238.6685) and (-689.4450,253.9250) .. (-689.4450,253.9250) ..
+      controls (-689.4450,253.9250) and (-680.3198,237.8280) .. (-680.3198,237.8280)
+      .. controls (-680.3198,237.8280) and (-701.2077,215.5022) ..
+      (-705.7643,183.6800) .. controls (-710.2075,152.6503) and (-694.9337,78.0572)
+      .. (-694.9337,78.0572) -- cycle;
+
+    % path5636
+    \path[draw,fill] (-694.9732,78.0748) .. controls (-712.1985,106.2745) and
+      (-724.2822,131.3753) .. (-731.5293,161.7812) .. controls (-736.2990,177.2320)
+      and (-736.4084,192.2077) .. (-733.2646,207.9053) .. controls
+      (-727.1653,235.7919) and (-713.1467,253.0872) .. (-713.1467,253.0872) ..
+      controls (-713.1467,253.0872) and (-701.9429,238.3611) .. (-701.9429,238.3611)
+      .. controls (-701.9429,238.3611) and (-719.6441,213.4329) ..
+      (-719.8869,181.2871) .. controls (-720.1237,149.9418) and (-694.9732,78.0748)
+      .. (-694.9732,78.0748) -- cycle;
+
+  \end{scope}
+  % polygon3717
+  \path[cm={{2.27076,0.0,0.0,2.23591,(549.95629,6.9475)}},draw,fill,line
+    width=2.800pt] (110.2460,6.7790) -- (142.3210,71.7710) -- (214.0420,82.1930)
+    -- (162.1440,132.7820) -- (174.3960,204.2150) -- (110.2460,170.4890) --
+    (46.0940,204.2150) -- (58.3460,132.7820) -- (6.4470,82.1930) --
+    (78.1690,71.7710) -- (110.2460,6.7790) -- cycle;
+
+\end{scope}
+\end{scope}
+
+\end{tikzpicture}
+\end{document}
