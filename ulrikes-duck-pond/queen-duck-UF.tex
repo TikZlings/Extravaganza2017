@@ -1,0 +1,161 @@
+% !Mode:: "TeX:UTF-8:Main"
+% xarara: pdflatex
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 60 -loop 1, format: gif}
+% xarara: showfile: {format: gif}
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[x11names,svgnames]{xcolor}
+\usepackage{tikzducks}
+\usepackage{scsnowman}
+\usepackage{tikzpeople,eso-pic}
+\usetikzlibrary{shadings}
+\pagestyle{empty}
+\parindent=0pt
+\definecolor{pskin}{RGB}{255,200,184}%
+\definecolor{phair}{RGB}{249,249,139}%
+\definecolor{mggreen}{RGB}{37,166,89}
+\tikzset{
+  0duck/.pic = {\begin{scope}[scale=0.8,transform shape]\randuck;\end{scope}},
+  30duck/.pic = {
+   \begin{scope}[scale=0.8,transform shape]
+    \duck[peakedcap=gray!40!black,tshirt=white,
+     stripes={\stripes[rotate=100,color=gray!40!black]},
+     prison=gray]
+  \end{scope}},
+ 60duck/.pic =
+  {
+   \begin{scope}[scale=0.8,transform shape]
+   \duck[body=yellow!50!brown!50!white,
+   longhair=red!50!brown,
+   jacket=blue!50!black]
+   \end{scope}},
+ 90duck/.pic =
+  {
+   \begin{scope}[scale=0.8,transform shape]
+    \duck[body=yellow!50!red!20!white,
+   recedinghair=gray!50!white,
+   eyebrow,
+   tshirt=white!93!black,
+   jacket=red!50!black,
+   glasses=brown!70!lightgray,
+   book=\scalebox{0.5}{\TeX},
+   bookcolour=black!20!brown]
+   \end{scope}},
+  120duck/.pic=
+   {
+    \begin{scope}[scale=0.8,transform shape]
+    \duck[cape=black,hat=black,mask=black]
+    \node[rotate=-5] at (0.4,0.7) {\tiny\fontfamily{pzc}
+     \selectfont \textbackslash ZZZ};
+     \fill[black,rotate=24] (0.1,0.21) rectangle (1.1,0.23)
+        (1.2,0.22) ellipse (0.15 and 0.03) (1.08,0.22)
+        ellipse (0.03 and 0.15);
+   \end{scope}
+  },
+   150duck/.pic=
+   {
+    \begin{scope}[scale=0.8,transform shape]
+    \duck[santa=red!80!black, jacket=red!80!gray, tshirt=white,beard=white!80!brown,body=LightGoldenrod2!70!RosyBrown1]
+    \end{scope}
+    },
+  180duck/.pic=
+  {
+   \begin{scope}[scale=0.8,transform shape]
+   \duck[tshirt=mggreen,stripes={\stripes}];
+   \node[overlay] at(0.4,0.6){\includegraphics[width=4mm]{Borussia_Moenchengladbach_logo}};
+   \end{scope}
+  },
+  210duck/.pic=
+  {
+   \begin{scope}[scale=0.8,transform shape]
+    \duck[cap,cricket]
+   \end{scope}
+  },
+  270duck/.pic= {\node[anchor=south west]{\usebox{\snowmanbox}};} ,
+  240duck/.pic= {
+   \begin{scope}[scale=0.75,transform shape]
+   \duck[witch=black!50!gray,
+       longhair=red!80!black,
+       jacket=black!50!gray,
+       magicwand]\end{scope}} ,
+   300duck/.pic =
+   {
+   \begin{scope}[scale=0.8,transform shape]
+   \duck[body=yellow!50!brown!40!white,
+      crazyhair=gray!50!white,
+      eyebrow,
+       glasses=brown!70!black,
+       book=\scalebox{0.2}{$E=mc^2$},
+      bookcolour=red!20!brown]
+    \end{scope}
+   },
+   330duck/.pic = {\node[anchor=south west,duck,horns=Silver,evil,sword,,minimum size=1.5cm] (B){};}
+  }
+
+
+\newsavebox\snowmanbox
+\savebox\snowmanbox{\scsnowman[scale=7,hat,snow,arms,buttons,muffler=blue]}
+
+\colorlet{treecolor}{LawnGreen!50!black}
+\tikzset{tree/.pic={
+    \begin{scope}[scale=0.2]	
+    \filldraw[brown] (-.5,-.5) rectangle ++(1,1.5);
+	\filldraw[treecolor] (0,1)
+	to[bend right] ++(4,0)
+	to[bend left] ++(-3,2)
+	to[bend right] ++(2,0)
+	to[bend left] ++(-2.5,2)
+	to[bend right] ++(1,0)
+	to[bend left] ++(-1.5,2)
+	-- cycle;
+	\filldraw[treecolor] (0,1)
+	to[bend left] ++(-4,0)
+	to[bend right] ++(3,2)
+	to[bend left] ++(-2,0)
+	to[bend right] ++(2.5,2)
+	to[bend left] ++(-1,0)
+	to[bend right] ++(1.5,2)
+	-- cycle;
+	\begin{scope}[shift={(-.6,6.4)}, scale=.6]
+		\duck
+	\end{scope}
+    \end{scope}}
+}
+\begin{document}
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \shade[ball color=LawnGreen] (0,0) rectangle (\paperwidth,\paperheight);
+ \path ([xshift=1cm,yshift=-2cm]current page.north west) pic {tree};
+ \path ([xshift=1cm,yshift=0.5cm]current page.south west) pic {tree};
+ \path ([xshift=-1cm,yshift=-2cm]current page.north east) pic {tree};
+ \path ([xshift=-1cm,yshift=0.5cm]current page.south east) pic {tree};
+ \end{tikzpicture}}}
+\foreach \x in {0,10,...,330} %355
+{%
+\begin{tikzpicture}
+
+\path (0,0) rectangle (\textwidth,\textheight);
+\begin{scope}[xshift=50mm,yshift=35mm,overlay]
+\duck[body=pskin!80!white,longhair=phair,tshirt=magenta!60!white,jacket=magenta!40!white,
+necklace=white!85!yellow]
+\fill[yellow!80!orange,rotate=-10,xshift=-11,yshift
+=5] \duckpathcrown;
+
+\coordinate (mycenter) at ([yshift=-0.8cm,xshift=-0.8cm]wing);
+%\draw ([yshift=0.2cm,xshift=0.2cm]wing) circle (3cm);
+\end{scope}
+
+  \foreach \y in {0,30,...,330}%
+ {
+  \path[overlay] (mycenter) --+(\x+\y:3.5) pic { \y duck };
+ }
+
+
+%\draw(0,0)--(mycenter);
+\end{tikzpicture}\newpage
+}
+\end{document} 
