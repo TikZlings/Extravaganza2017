@@ -1,0 +1,34 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+\documentclass{article}
+\usepackage[utf8]{inputenc} %probably not needed ...
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[x11names,svgnames]{xcolor}
+\usepackage{tikzducks}
+
+\pagestyle{empty}
+\parindent=0pt
+\usepackage{eso-pic}
+\usepackage{bbold}
+
+\begin{document}
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \fill[SlateGray4,even odd rule] (0,0) rectangle (\paperwidth,\paperheight) (9.5,5.5) rectangle (12,8.8) ;
+ \fill[color=SlateGray4!70!white] (0,0) rectangle (\paperwidth,\paperheight) (9.5,5.5) rectangle (12,8.8) ;
+ \end{tikzpicture}}}
+
+\begin{tikzpicture}[]
+\path (0,0) rectangle (\textwidth,\textheight);
+
+\begin{scope}[xshift=1cm,yshift=4cm,scale=1]
+\duck[cap,cricket]
+
+\node [xshift=1cm,yshift=-1cm] {\scalebox{4}{\color{white}\bbfamily ~SCENE MISSING}};
+\end{scope}
+\end{tikzpicture}
+
+\end{document} 
